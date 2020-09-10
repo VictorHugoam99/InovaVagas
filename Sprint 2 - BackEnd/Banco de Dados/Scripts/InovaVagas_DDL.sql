@@ -3,6 +3,7 @@ GO
 USE InovaVagas;
 GO
 
+
 CREATE TABLE Usuario
 (
 	IdUsuario				INT PRIMARY KEY IDENTITY,
@@ -133,7 +134,8 @@ GO
 CREATE TABLE StatusCandidatura 
 (
 	IdStatusCandidatura		INT PRIMARY KEY IDENTITY,
-	NomeStatusCandidatura	VARCHAR(50)
+	NomeStatusCandidatura	VARCHAR(50),
+	Descricao				VARCHAR(250)
 )
 GO
 
@@ -164,8 +166,7 @@ CREATE TABLE Contrato
 	CopiaContrato			BIT NOT NULL,
 	PlanoEstagio			BIT,
 	MotivoEvasao			INT,
-	IdAluno					INT FOREIGN KEY REFERENCES Aluno (IdAluno),
-	IdEmpresa				INT FOREIGN KEY REFERENCES Empresa (IdEmpresa),
+	IdCandidatura			INT FOREIGN KEY REFERENCES Candidatura (IdCandidatura),
 	IdStatusContrato		INT FOREIGN KEY REFERENCES StatusContrato (IdStatusContrato)
 )
 GO
@@ -180,7 +181,7 @@ GO
 CREATE TABLE TipoPergunta 
 (
 	IdTipoPergunta			INT PRIMARY KEY IDENTITY,
-	NomeTipoResposta		VARCHAR(50)
+	NomeTipoPergunta		VARCHAR(50)
 )
 GO
 
