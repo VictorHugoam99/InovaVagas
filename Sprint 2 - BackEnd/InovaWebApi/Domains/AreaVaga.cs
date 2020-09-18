@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace InovaWebApi.Domains
 {
@@ -12,6 +13,7 @@ namespace InovaWebApi.Domains
 
         public int IdAreaVaga { get; set; }
         public string NomeAreaVaga { get; set; }
+        [JsonIgnore]
 
         public virtual ICollection<Vaga> Vaga { get; set; }
     }

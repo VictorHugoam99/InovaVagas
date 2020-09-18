@@ -13,19 +13,19 @@ namespace InovaWebApi.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class TipoCursoController : ControllerBase
+    public class StatusCandidaturaController : ControllerBase
     {
         /// <summary>
         /// 
         /// </summary>
-        private ITipoCursoRepository _tipoCursoRepository;
+        private IStatusCandidaturaRepository _statusCandidaturaRepository;
 
         /// <summary>
         /// 
-        /// </summary>  
-        public TipoCursoController()
+        /// </summary>
+        public StatusCandidaturaController()
         {
-            _tipoCursoRepository = new TipoCursoRepository();
+            _statusCandidaturaRepository = new StatusCandidaturaRepository();
         }
 
         /// <summary>
@@ -37,7 +37,27 @@ namespace InovaWebApi.Controllers
         {
             try
             {
-                return Ok(_tipoCursoRepository.ListarTodos());
+                return Ok(_statusCandidaturaRepository.ListarTodos());
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetPorId(int id)
+        {
+            try
+            {
+                StatusCandidatura statusCandidaturaBuscado = _statusCandidaturaRepository.BuscarPorId(id);
+
+                if (statusCandidaturaBuscado != null)
+                {
+                    return Ok(statusCandidaturaBuscado);
+                }
+
+                return NotFound("Nenhum status de candidatura foi encontrado");
             }
             catch (Exception error)
             {
@@ -48,14 +68,14 @@ namespace InovaWebApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="novoTipoCurso"></param>
+        /// <param name="novoStatusCandidatura"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Post(TipoCurso novoTipoCurso)
+        public IActionResult Post(StatusCandidatura novoStatusCandidatura)
         {
             try
             {
-                _tipoCursoRepository.Cadastrar(novoTipoCurso);
+                _statusCandidaturaRepository.Cadastrar(novoStatusCandidatura);
 
                 return StatusCode(201);
             }
@@ -69,23 +89,23 @@ namespace InovaWebApi.Controllers
         /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="tipoCursoAtualizado"></param>
+        /// <param name="statusCandidaturaAtualizado"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public IActionResult Put(int id ,TipoCurso tipoCursoAtualizado)
+        public IActionResult Put(int id, StatusCandidatura statusCandidaturaAtualizado)
         {
             try
             {
-                TipoCurso tipoCursoBuscado = _tipoCursoRepository.BuscarPorId(id);
+                StatusCandidatura statusCandidaturaBuscado = _statusCandidaturaRepository.BuscarPorId(id);
 
-                if (tipoCursoBuscado != null)
+                if (statusCandidaturaBuscado != null)
                 {
-                    _tipoCursoRepository.Atualizar(id, tipoCursoAtualizado);
+                    _statusCandidaturaRepository.Atualizar(id, statusCandidaturaAtualizado);
 
                     return StatusCode(204);
                 }
 
-                return NotFound("Nenhum tipo de curso encontrado.");
+                return NotFound("Nenhum status de candidatura foi encontrado.");
             }
             catch (Exception error)
             {
@@ -103,16 +123,16 @@ namespace InovaWebApi.Controllers
         {
             try
             {
-                TipoCurso tipoCursoBuscado = _tipoCursoRepository.BuscarPorId(id);
+                StatusCandidatura statusCandidaturaBuscado = _statusCandidaturaRepository.BuscarPorId(id);
 
-                if (tipoCursoBuscado != null)
+                if (statusCandidaturaBuscado != null)
                 {
-                    _tipoCursoRepository.Excluir(id);
+                    _statusCandidaturaRepository.Excluir(id);
 
                     return StatusCode(202);
                 }
 
-                return NotFound("Nenhum tipo de curso encontrado.");
+                return NotFound("Nenhum status de candidatura foi encontrado.");
             }
             catch (Exception error)
             {

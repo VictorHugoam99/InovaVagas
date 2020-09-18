@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace InovaWebApi.Domains
 {
@@ -9,7 +10,7 @@ namespace InovaWebApi.Domains
         {
             Administrador = new HashSet<Administrador>();
             Aluno = new HashSet<Aluno>();
-            Empresa = new HashSet<Empresa>();
+            Empresa = new HashSet<Empresa>();            
         }
 
         public int IdUsuario { get; set; }
