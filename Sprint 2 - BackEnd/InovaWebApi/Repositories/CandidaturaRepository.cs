@@ -16,8 +16,37 @@ namespace InovaWebApi.Repositories
 
         public void Add(Candidatura candidatura)
         {
+            candidatura.Contratado = false;
+            candidatura.IdStatusCandidatura = 1;
             ctx.Candidatura.Add(candidatura);
             ctx.SaveChanges();
+        }
+
+        public void AtualizarStatus(int id)
+        {
+            Candidatura candidaturaBuscada = GetById(id);
+
+            if (candidaturaBuscada.IdStatusCandidatura == 1 || candidaturaBuscada.IdStatusCandidatura == 2)
+            {
+                candidaturaBuscada.IdStatusCandidatura++;
+                ctx.Candidatura.Add(candidaturaBuscada);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Contratar(int id)
+        {
+            Candidatura candidaturaBuscada = GetById(id);
+
+            if (Convert.ToBoolean(!candidaturaBuscada.Contratado))
+            {
+                candidaturaBuscada.Contratado = !candidaturaBuscada.Contratado;
+
+                ctx.Update(candidaturaBuscada);
+
+                ctx.SaveChanges();
+            }
+
         }
 
         public void Delete(int id)

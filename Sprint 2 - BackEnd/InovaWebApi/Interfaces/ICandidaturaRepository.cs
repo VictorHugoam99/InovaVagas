@@ -11,7 +11,9 @@ namespace InovaWebApi.Interfaces
         /// Uma lista de Candidatos
         List<Candidatura> GetAll();
 
+        void AtualizarStatus(int id);
 
+        void Contratar(int id);
         /// Busca um aluno por ID
         /// <param name="id">ID do aluno que será buscado</param>
         /// Um usuário buscado

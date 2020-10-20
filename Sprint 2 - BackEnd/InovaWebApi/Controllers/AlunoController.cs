@@ -28,8 +28,8 @@ namespace InovaWebApi.Controllers
         /// </summary>
         /// <returns>null</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        /*[Authorize(Roles= "Administrador")]
-        [Authorize(Roles = "Empresa")]*/
+        [Authorize(Roles= "Administrador")]
+        [Authorize(Roles = "Empresa")]
         // GET: api/<Aluno>
         [HttpGet]
         public IActionResult Get()
@@ -50,7 +50,9 @@ namespace InovaWebApi.Controllers
         /// <param name="id"></param>
         /// <returns>Aluno Object</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        /*[Authorize(Roles = "Administrador, Aluno")]*/
+        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Empresa")]
+        [Authorize(Roles = "Aluno")]
         // GET api/<Aluno>/5
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
@@ -79,7 +81,6 @@ namespace InovaWebApi.Controllers
         /// <returns>null</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //[Authorize(Roles = "Administrador, Aluno")]
         // POST api/<Aluno>
         [HttpPost]
         public IActionResult Post(Aluno aluno)
@@ -103,7 +104,7 @@ namespace InovaWebApi.Controllers
         /// <returns>null</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        /*[Authorize(Roles = "Administrador, Aluno")]*/
+        [Authorize(Roles = "Administrador, Aluno")]
         // PUT api/<Aluno>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, Aluno aluno)
@@ -128,7 +129,7 @@ namespace InovaWebApi.Controllers
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        /*[Authorize(Roles = "Administrador, Aluno")]*/
+        [Authorize(Roles = "Administrador, Aluno")]
         //dominio/api/Aluno/id
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

@@ -30,11 +30,6 @@ namespace InovaWebApi.Repositories
             return null;
         }
 
-        public IActionResult CricaoToken(string email, int id, string tipoRole)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Excluir(int id)
         {
             Usuario usuarioBuscado = ctx.Usuario.Find(id);

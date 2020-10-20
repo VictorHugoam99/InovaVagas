@@ -13,6 +13,5 @@ namespace InovaWebApi.Interfaces
         void Excluir(int id);
         Usuario BuscarPorId(int id);
         Object VerificarTipoUsuario(string email, string senha);
-        IActionResult CricaoToken(string email, int id, string tipoRole);
     }
 }

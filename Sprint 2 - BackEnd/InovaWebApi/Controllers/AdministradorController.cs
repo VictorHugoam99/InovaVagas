@@ -35,7 +35,7 @@ namespace InovaWebApi.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        //[Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -54,7 +54,7 @@ namespace InovaWebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //[Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -80,7 +80,7 @@ namespace InovaWebApi.Controllers
         /// </summary>
         /// <param name="novoAdministrador"></param>
         /// <returns></returns>
-        //[Authorize(Roles ="Administrador")]
+        [Authorize(Roles ="Administrador")]
         [HttpPost]
         public IActionResult Post(Administrador novoAdministrador)
         {
@@ -106,7 +106,7 @@ namespace InovaWebApi.Controllers
         /// <param name="id"></param>
         /// <param name="administradorAtualizado"></param>
         /// <returns></returns>
-        //[Authorize(Roles ="Administrador")]
+        [Authorize(Roles ="Administrador")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, Administrador administradorAtualizado)
         {
@@ -134,7 +134,7 @@ namespace InovaWebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //[Authorize("Administrador")]
+        [Authorize("Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

@@ -1,6 +1,7 @@
 ﻿using InovaWebApi.Domains;
 using InovaWebApi.Interfaces;
 using InovaWebApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace InovaWebApi.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]

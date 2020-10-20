@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using InovaWebApi.Domains;
 using InovaWebApi.Interfaces;
 using InovaWebApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,9 +13,7 @@ namespace InovaWebApi.Controllers
 {
     //gerar resposta json
     [Produces("application/json")]
-
     [Route("api/[controller]")]
-
     [ApiController]
     public class CandidaturaController : ControllerBase
     {
@@ -25,6 +24,8 @@ namespace InovaWebApi.Controllers
             _candidaturaRepository = new CandidaturaRepository();
         }
 
+        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Empresa")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -40,7 +41,9 @@ namespace InovaWebApi.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Empresa")]
+        [Authorize(Roles = "Aluno")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -63,6 +66,7 @@ namespace InovaWebApi.Controllers
         }
 
         //Cadastro
+        [Authorize(Roles = "Aluno")]
         [HttpPost]
         public IActionResult Post(Candidatura candidatura)
         {
@@ -77,6 +81,7 @@ namespace InovaWebApi.Controllers
                 return BadRequest(error);
             }
         }
+
         //Atualiza
         [HttpPut("{id}")]
         public IActionResult Put(int id, Candidatura candidatura)
