@@ -1,9 +1,10 @@
 import React from 'react';
+import Routers from './routers'
 
 function App() {
   return (
     <div className="App">
-      <h1>Nao</h1>
+      <Routers/>
     </div>
   );
 }
