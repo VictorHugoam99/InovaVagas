@@ -1,11 +1,10 @@
 import React from 'react';
 import Routers from './routers'
-// import { } from 'react-bootstrap';
+import Teste from './pages/teste/teste';
 
 function App() {
   return (
     <div className="App">
-      <h1>Home</h1>
       <Routers/>
     </div>
   );

@@ -4,3 +4,11 @@
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
 }
+
+html, body, .App , .root{
+    height: 100%;
+}
+
+*:focus {
+    outline: none;
+}

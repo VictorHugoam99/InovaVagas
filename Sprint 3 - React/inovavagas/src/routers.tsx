@@ -5,6 +5,10 @@ import {parseJwt} from './services/auth';
 // import Login from './pages/login/index';
 // import Cadastro from './pages/cadastro/index'
 // import Perfil from './pages/perfil';
+import Teste from './pages/teste/teste';
+import Login from './pages/login/index';
+import SelecaoCadastro from './pages/selecaoCadastro/index';
+import AlunoCadastro from './pages/alunoCadastro/index';
 
 
 function Routers() {
@@ -54,9 +58,13 @@ function Routers() {
         <BrowserRouter>
             <Switch>
                 {/* <RotaPrivadaAluno path="/" exact component={HomeAluno}/>
-                <Route path="/login" component={Login}/>
                 <Route path="/cadastro" component={Cadastro}/>
-                <RotaPrivadaAluno path="/perfil" component={Perfil}/> */}
+            <RotaPrivadaAluno path="/perfil" component={Perfil}/> */}
+                <Route path='/' exact component={Teste}/>
+                <Route path="/login" component={Login}/>
+                <Route path="/selecaoCadastro" component={SelecaoCadastro}/>
+                <Route path="/aCadastro" component={AlunoCadastro}/>
+                {/* <Route path="/empresaCadastro" component={EmpresaCadastro}/> */}
             </Switch>
         </BrowserRouter>
     )
