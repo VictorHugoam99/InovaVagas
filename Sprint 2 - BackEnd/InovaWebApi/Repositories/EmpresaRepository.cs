@@ -13,18 +13,21 @@ namespace InovaWebApi.Repositories
     {
         InovaVagasContext ctx = new InovaVagasContext();
 
-        public void Aprovar(int id, bool respostaVerificacao)
+        public void Aprovar(int id)
         {
-            respostaVerificacao = true;
             Empresa empresaBuscada = ctx.Empresa.Find(id);
 
-            if (empresaBuscada != null)
+            if (!empresaBuscada.CadastroAprovado)
             {
-                if (empresaBuscada.CadastroAprovado == false)
-                {
-                    empresaBuscada.CadastroAprovado = respostaVerificacao;
-                }
+                empresaBuscada.CadastroAprovado = !empresaBuscada.CadastroAprovado;
+
+                ctx.Update(empresaBuscada);
+
+                ctx.SaveChanges();
             }
+
+            //!empresaBuscada.Verificacao ?? empresaBuscada.Verificacao = !empresaBuscada.Verificacao
+
         }
 
         public void Atualizar(int id, Empresa empresaAtualizada)
@@ -231,20 +234,6 @@ namespace InovaWebApi.Repositories
 
             // Caso não seja encontrado, retorna nulo
             return null;
-        }
-
-        public void Reprovar(int id, bool respostaVerificacao)
-        {
-            respostaVerificacao = false;
-            Empresa empresaBuscada = ctx.Empresa.Find(id);
-
-            if (empresaBuscada != null)
-            {
-                if (empresaBuscada.CadastroAprovado == false)
-                {
-                    empresaBuscada.CadastroAprovado = respostaVerificacao;
-                }
-            }
         }
     }
 }

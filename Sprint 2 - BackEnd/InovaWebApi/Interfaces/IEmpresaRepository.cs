@@ -15,8 +15,7 @@ namespace InovaWebApi.Interfaces
         void Atualizar(int id, Empresa empresaAtualizada);
         void Deletar(int id);
         List<Empresa> ListarPorOrdemAlfabetica();
-        void Aprovar(int id, bool respostaVerificacao);
-        void Reprovar(int id, bool respostaVerificacao);
+        void Aprovar(int id);
         Empresa Login(string email, string senha);
     }
 }

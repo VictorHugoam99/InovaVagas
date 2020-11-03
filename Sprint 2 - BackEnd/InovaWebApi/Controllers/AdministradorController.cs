@@ -35,7 +35,7 @@ namespace InovaWebApi.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        [Authorize(Roles = "Administrador")]
+        //[Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -134,7 +134,7 @@ namespace InovaWebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [Authorize("Administrador")]
+        [Authorize(Roles ="Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

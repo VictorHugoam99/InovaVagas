@@ -12,14 +12,14 @@ interface ButtonProps{
 const ButtonFull:React.FC<ButtonProps> = ({name, tamanho, screenSize, variante, ...rest}) => {
     if(variante === 'outline-danger'){
         return(
-            <Button variant="outline-danger" size={tamanho}{...rest}>
+            <Button variant="outline-danger" size={tamanho} type='submit' {...rest}>
                 {name}
             </Button>
         );
     }    
     else{
         return(
-            <Button variant="danger" className="btn-danger" size={tamanho}{...rest}>
+            <Button variant="danger" className="btn-danger" size={tamanho} type='submit' {...rest}>
                 {name}
             </Button>
         );

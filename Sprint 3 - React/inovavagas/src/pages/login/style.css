@@ -6,15 +6,16 @@
     min-height: 100vh;
 }
 
-.content {
+.login .content {
     background-color: #EEEEEE;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.logos {
+.login .logos {
     background-color: #DF2F2F;
     width: 100%;
     display: flex;
@@ -22,12 +23,12 @@
     justify-content: center;
 }
 
-.logos img {
+.login .logos img {
     width: 580px;
     height: 65px;
 }
 
-.content .formulario {
+.login .content .formulario {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,16 +36,16 @@
     /* width: 100%; */
 }
 
-.content .formulario .inputs {
+.login .content .formulario .inputs {
     margin-bottom: 40px;
 }
 
-.link {
+.login .link {
     text-decoration: none;
     color: #DF2F2F;
 }
 
-.link:hover {
+.login .link:hover {
     color: #DF2F2F;
     text-decoration: underline;
 }

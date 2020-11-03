@@ -1,4 +1,4 @@
-.alunoCadastro {
+.empresaCadastro {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-.alunoCadastro .content {
+.empresaCadastro .content {
     background-color: #EEEEEE;
     width: 140%;
     display: flex;
@@ -16,16 +16,16 @@
     align-items: center;
 }
 
-.alunoCadastro .content h1 {
+.empresaCadastro .content h1 {
     margin-top: 84px;
     font-weight: bold;
 }
 
-.alunoCadastro .content h3 {
+.empresaCadastro .content h3 {
     margin-top: 30px;
 }
 
-.alunoCadastro .logos {
+.empresaCadastro .logos {
     top: 0;
     background-color: #DF2F2F;
     width: 100%;
@@ -35,20 +35,20 @@
     justify-content: center;
 }
 
-.alunoCadastro .logos h1{
+.empresaCadastro .logos h1{
     position: fixed;
     top: 400px;
     color: white;
 }
 
-.alunoCadastro .logos h2 {
+.empresaCadastro .logos h2 {
     position: fixed;
     top: 500px;
     color: white;
     max-width: 300px;
 }
 
-.alunoCadastro .logos p {
+.empresaCadastro .logos p {
     position: fixed;
     top: 850px;
     color: white;
@@ -56,14 +56,14 @@
     max-width: 400px;
 }
 
-.alunoCadastro .logos img {
+.empresaCadastro .logos img {
     position: fixed;
     top: 150px;
     width: 580px;
     height: 65px;
 }
 
-.alunoCadastro .content .formulario {
+.empresaCadastro .content .formulario {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,34 +71,34 @@
     /* width: 100%; */
 }
 
-.alunoCadastro .content .formulario .row1, .row2, .row3, .row4{
+.empresaCadastro .content .formulario .row1, .row2, .row3, .row4{
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.alunoCadastro .content .formulario .row1 Input, .row2 Input, .row3 Input, .row4 Input {
+.empresaCadastro .content .formulario .row1 Input, .row2 Input, .row3 Input, .row4 Input {
     width: 240px;
 }
 
-.alunoCadastro .titleHead {
+.empresaCadastro .titleHead {
     display: flex;
 }
 
-.alunoCadastro .titleHead h2{
+.empresaCadastro .titleHead h2{
     margin: 80px 50px;
 }
 
-.alunoCadastro .titleHead .aluno {
+.empresaCadastro .titleHead .empresa {
     color:  #DF2F2F;
     border-bottom: 5px solid #DF2F2F
 }
 
-.alunoCadastro .titleHead .empresa {
+.empresaCadastro .titleHead .aluno {
     color: #3A3A3A;
 }
 
-.alunoCadastro .content .botoes {
+.empresaCadastro .content .botoes {
     width: 100%;
     display: flex;
     justify-content: space-between;

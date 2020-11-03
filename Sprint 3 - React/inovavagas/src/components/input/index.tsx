@@ -41,51 +41,39 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({ name, label, type, classCSS, placeholder, description, ...rest }) => {
     if (type === 'select' && classCSS === 'input-select') {
         return (
-            <Form.Group>
+            <div className='FormGroup'>
                 <Form.Label htmlFor={name}>{label}</Form.Label>
                 <FormText>{description}</FormText>
                 <Form.Control as="select" id={name} defaultValue={placeholder} bsPrefix={classCSS}>
                     <option>{placeholder}</option>
                     <option></option>
                 </Form.Control>
-            </Form.Group>
+            </div>
         );
     }
     else if (type === 'password' && classCSS === 'input-password') {
         return (
-            <div>
-                <Form>
-                    <FormGroup>
-                        <FormLabel htmlFor={name}>{label}</FormLabel>
-                        <FormText>{description}</FormText>
-                        <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} minLength={8} maxLength={16} />
-                    </FormGroup>
-                </Form>
+            <div className='FormGroup'>
+                <FormLabel htmlFor={name}>{label}</FormLabel>
+                <FormText>{description}</FormText>
+                <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} minLength={8} maxLength={16} />
             </div>
         );
     }
     else if (type === 'placeholder' && classCSS === 'input-placeholder') {
         return (
-            <div>
-                <Form>
-                    <FormGroup>
-                        <FormText>{description}</FormText>
-                        <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} minLength={8} maxLength={16} />
-                    </FormGroup>
-                </Form>
+            <div className='FormGroup'>
+                <FormText>{description}</FormText>
+                <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} minLength={8} maxLength={16} />
             </div>
         );
     }
     else {
         return (
-            <div>
-                <Form>
-                    <FormGroup>
-                        <FormLabel htmlFor={name}>{label}</FormLabel>
-                        <FormText>{description}</FormText>
-                        <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} />
-                    </FormGroup>
-                </Form>
+            <div className='FormGroup'>
+                <FormLabel htmlFor={name}>{label}</FormLabel>
+                <FormText>{description}</FormText>
+                <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} />
             </div>
         );
     }

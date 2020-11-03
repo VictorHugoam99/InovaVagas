@@ -1,0 +1,160 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6em;
+    height: 2.5em;
+    padding-top: 6px;
+}
+
+.principal{
+    background-color: #DF2F2F;
+    box-shadow: 0px 4px 10px #0000002a;
+    position: fixed;
+    width: 100%;
+}
+
+
+.img{
+    padding-left: 20px;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: fixed;
+    width: 30px;
+    height: 24px;
+    left: 70px;
+    top: 10px;
+}
+
+  /* Color/shape of burger icon bars */
+.bm-burger-bars {
+    position: absolute;
+    background: whitesmoke;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+    background: gray;
+}
+
+  /* Position and sizing of clickable cross button */
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+  /* Color/shape of close button cross */
+.bm-cross {
+    background: white;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+.bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+    background: white;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+}
+
+  /* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    fill: whitesmoke;
+}
+
+  /* Wrapper for item list */
+.bm-item-list {
+    color: gray;
+    padding: 0.8em;
+}
+
+  /* Individual item */
+.bm-item {
+    display: inline-block;
+}
+
+  /* Styling of overlay */
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.bm-item {
+    display: inline-block;
+    color: #3A3A3A;
+    margin-bottom: 10px;
+    text-align: left;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.bm-item:hover {
+    color: gray;
+    position: block;
+}
+
+.img-item{
+    padding-right: 5px;
+}
+
+p{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.linha{
+    background-color: whitesmoke;
+}
+
+.nome-aluno{
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.verPerfil{
+    color: #DF2F2F;
+}
+
+.verPerfil:hover{
+    color: #DF2F2F;
+}
+
+.dropdown{
+    color: #3A3A3A;
+}
+
+.dropdown:hover{
+    color: #3A3A3A;
+}
+
+.img-perfil{
+    border-radius: 45%
+}
+
+.usuario{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media(max-width: 767px) {
+    
+    
+    .img-item{
+        width: 25px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+

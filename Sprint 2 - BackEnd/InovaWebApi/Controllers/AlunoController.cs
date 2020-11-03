@@ -28,8 +28,7 @@ namespace InovaWebApi.Controllers
         /// </summary>
         /// <returns>null</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [Authorize(Roles= "Administrador")]
-        [Authorize(Roles = "Empresa")]
+        [Authorize(Roles= "Administrador, Empresa")]
         // GET: api/<Aluno>
         [HttpGet]
         public IActionResult Get()
@@ -50,9 +49,7 @@ namespace InovaWebApi.Controllers
         /// <param name="id"></param>
         /// <returns>Aluno Object</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [Authorize(Roles = "Administrador")]
-        [Authorize(Roles = "Empresa")]
-        [Authorize(Roles = "Aluno")]
+        [Authorize]
         // GET api/<Aluno>/5
         [HttpGet("{id}")]
         public IActionResult GetById(int id)

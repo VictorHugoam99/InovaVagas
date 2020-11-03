@@ -106,12 +106,16 @@ namespace InovaWebApi
                 c.RoutePrefix = string.Empty;
             });
 
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             // Habilita o uso de autenticação
             app.UseAuthentication();
 
             app.UseStaticFiles();
             app.UseRouting();
             app.UseCors();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

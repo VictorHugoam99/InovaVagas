@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using InovaWebApi.Domains;
 using InovaWebApi.Interfaces;
 using InovaWebApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -46,6 +47,29 @@ namespace InovaWebApi.Controllers
             }
         }
 
+        [HttpPut]
+        public IActionResult AprovarEmpresa(int id)
+        {
+            try
+            {
+                Empresa empresaBuscada = _empresaRepository.BuscarPorId(id);
+
+                if (empresaBuscada != null)
+                {
+                    _empresaRepository.Aprovar(id);
+
+                    return StatusCode(204);
+                }
+
+                return NotFound("Nenhuma empresa encontrada para o ID informado");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
+        [Authorize(Roles = "Administrador, Aluno")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -62,6 +86,7 @@ namespace InovaWebApi.Controllers
             }            
         }
 
+        [Authorize(Roles = "Administrador, Empresa")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -76,6 +101,7 @@ namespace InovaWebApi.Controllers
             
         }
 
+        [Authorize(Roles = "Empresa")]
         [HttpPut("{id}")]
         public IActionResult Put(int id,  Empresa empresaAtualizada)
         {
@@ -93,6 +119,7 @@ namespace InovaWebApi.Controllers
             
         }
 
+        [Authorize(Roles = "Administrador, Empresa")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -109,6 +136,7 @@ namespace InovaWebApi.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("OrdemAlfabetica")]
         public IActionResult GetByAlphabetical()
         {

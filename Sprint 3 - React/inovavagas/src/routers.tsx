@@ -9,6 +9,8 @@ import Teste from './pages/teste/teste';
 import Login from './pages/login/index';
 import SelecaoCadastro from './pages/selecaoCadastro/index';
 import AlunoCadastro from './pages/alunoCadastro/index';
+import EmpresaCadastro from './pages/empresaCadastro/index';
+import HomeAdm from './pages/homeAdm';
 
 
 function Routers() {
@@ -64,7 +66,8 @@ function Routers() {
                 <Route path="/login" component={Login}/>
                 <Route path="/selecaoCadastro" component={SelecaoCadastro}/>
                 <Route path="/aCadastro" component={AlunoCadastro}/>
-                {/* <Route path="/empresaCadastro" component={EmpresaCadastro}/> */}
+                <Route path="/eCadastro" component={EmpresaCadastro}/>
+                <Route path="/admin" component={HomeAdm}/>
             </Switch>
         </BrowserRouter>
     )
