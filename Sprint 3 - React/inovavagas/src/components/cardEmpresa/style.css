@@ -1,0 +1,51 @@
+.cardEmpresa .main-card {
+    display: flex;
+    border-radius: 0.5em;
+    height: 200px;
+    width: 220px;
+    outline: none;
+    box-shadow: 0px 4px 10px #0000002a;
+    border: none;
+}
+
+.cardEmpresa .card-body {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardEmpresa .card-img {
+    width: 60%;
+    height: 60%;
+}
+
+.cardEmpresa .card-title {
+    font-size: 20px;
+    font-weight: lighter;
+    color: #3A3A3A;
+}
+
+.cardEmpresa .perfil{
+    font-size: 15px;
+    font-weight: lighter;
+    color: #DF2F2F;
+    padding-top: 5px;
+}
+
+.cardEmpresa .perfil:hover {
+    color: #DF2F2F;
+}
+
+.cardEmpresa .main-card:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.cardEmpresa{
+    padding-bottom: 2em;
+}
+
+.cardEmpresa .container:hover{
+    text-decoration: none;
+}

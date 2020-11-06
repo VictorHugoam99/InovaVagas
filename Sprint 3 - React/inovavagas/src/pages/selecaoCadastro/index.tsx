@@ -22,7 +22,7 @@ function SelecaoCadastro() {
                     <Link to='/eCadastro'><CardButton title='Empresa' img={imgPredioRed} /></Link>
                 </div>
 
-                <Link to='/login' className='link'><ButtonFull name='Voltar' variante='outline-danger' tamanho='lg' /></Link>
+                <Link to='/' className='link'><ButtonFull name='Voltar'/></Link>
             </div>
 
             <div className="logos">

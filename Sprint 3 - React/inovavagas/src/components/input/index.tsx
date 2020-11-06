@@ -15,8 +15,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     placeholder?: string;
     type: string;
-    classCSS: string;
-    description?: string;
 }
 
 // Como Usar:
@@ -38,45 +36,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 // classCSS: usado para estilizar as duas versões de input (só deve ser escrito "input-label", "input-placeholder" ou input-select nesse campo)
 // description => usado para inserir um texto encima descrevendo o input
 
-const Input: React.FC<InputProps> = ({ name, label, type, classCSS, placeholder, description, ...rest }) => {
-    if (type === 'select' && classCSS === 'input-select') {
-        return (
-            <div className='FormGroup'>
-                <Form.Label htmlFor={name}>{label}</Form.Label>
-                <FormText>{description}</FormText>
-                <Form.Control as="select" id={name} defaultValue={placeholder} bsPrefix={classCSS}>
-                    <option>{placeholder}</option>
-                    <option></option>
-                </Form.Control>
-            </div>
-        );
-    }
-    else if (type === 'password' && classCSS === 'input-password') {
-        return (
-            <div className='FormGroup'>
-                <FormLabel htmlFor={name}>{label}</FormLabel>
-                <FormText>{description}</FormText>
-                <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} minLength={8} maxLength={16} />
-            </div>
-        );
-    }
-    else if (type === 'placeholder' && classCSS === 'input-placeholder') {
-        return (
-            <div className='FormGroup'>
-                <FormText>{description}</FormText>
-                <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} minLength={8} maxLength={16} />
-            </div>
-        );
-    }
-    else {
-        return (
-            <div className='FormGroup'>
-                <FormLabel htmlFor={name}>{label}</FormLabel>
-                <FormText>{description}</FormText>
-                <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} />
-            </div>
-        );
-    }
+const Input: React.FC<InputProps> = ({ name, label, type, placeholder, ...rest }) => {
+    return (
+        <div className='FormGroup'>
+            {/* <FormText>{description}</FormText>
+                <FormControl type={type} id={name} placeholder={placeholder} bsPrefix={classCSS} minLength={8} maxLength={16}/> */}
+            <p>{label}</p>
+            <input type={type} id={name} placeholder={placeholder} className='input-placeholder'{...rest} />
+        </div>
+    );
 }
-
+    
 export default Input;

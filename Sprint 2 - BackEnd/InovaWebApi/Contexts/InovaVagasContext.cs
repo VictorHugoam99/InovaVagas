@@ -54,51 +54,52 @@ namespace InovaWebApi.Contexts
         /// forem cadastradas, seus campos de DataCadastro seram preenchidos com a data atual.
         /// </summary>
         /// <returns> Retorna o SaveChanges() padrão com a alteração feita abaixo </returns>
-       public override int SaveChanges()
-        {
-            var entries = ChangeTracker
-                .Entries()
-                .Where(e => e.Entity is Administrador || e.Entity is Aluno || e.Entity is Empresa || e.Entity is Vaga || e.Entity is Candidatura && (
-                e.State == EntityState.Added));
+       
+       //public override int SaveChanges()
+       // {
+       //     var entries = ChangeTracker
+       //         .Entries()
+       //         .Where(e => e.Entity is Administrador || e.Entity is Aluno || e.Entity is Empresa || e.Entity is Vaga || e.Entity is Candidatura && (
+       //         e.State == EntityState.Added));
 
-            foreach (var entityEntry in entries)
-            {
-                if (entityEntry.State == EntityState.Added)
-                {
-                    if (entityEntry.Entity is Administrador)
-                    {
-                        ((Administrador)entityEntry.Entity).IdUsuarioNavigation.DataCadastro = DateTime.Now;
-                    }
+       //     foreach (var entityEntry in entries)
+       //     {
+       //         if (entityEntry.State == EntityState.Added)
+       //         {
+       //             if (entityEntry.Entity is Administrador)
+       //             {
+       //                 ((Administrador)entityEntry.Entity).IdUsuarioNavigation.DataCadastro = DateTime.Now;
+       //             }
 
-                    if (entityEntry.Entity is Aluno)
-                    {
-                        ((Aluno)entityEntry.Entity).IdUsuarioNavigation.DataCadastro = DateTime.Now;
-                    }
+       //             if (entityEntry.Entity is Aluno)
+       //             {
+       //                 ((Aluno)entityEntry.Entity).IdUsuarioNavigation.DataCadastro = DateTime.Now;
+       //             }
 
-                    if (entityEntry.Entity is Empresa)
-                    {
-                        ((Empresa)entityEntry.Entity).IdUsuarioNavigation.DataCadastro = DateTime.Now;
-                    }
+       //             if (entityEntry.Entity is Empresa)
+       //             {
+       //                 ((Empresa)entityEntry.Entity).IdUsuarioNavigation.DataCadastro = DateTime.Now;
+       //             }
 
-                    if (entityEntry.Entity is Vaga)
-                    {
-                        ((Vaga)entityEntry.Entity).DataCadastro = DateTime.Now;
-                    }
+       //             if (entityEntry.Entity is Vaga)
+       //             {
+       //                 ((Vaga)entityEntry.Entity).DataCadastro = DateTime.Now;
+       //             }
 
-                    if (entityEntry.Entity is Candidatura)
-                    {
-                        ((Candidatura)entityEntry.Entity).DataCandidatura = DateTime.Now;
-                    }
+       //             if (entityEntry.Entity is Candidatura)
+       //             {
+       //                 ((Candidatura)entityEntry.Entity).DataCandidatura = DateTime.Now;
+       //             }
 
-                    /*if (entityEntry.Entity == Empresa)
-                    {
-                        ((Empresa)entityEntry.Entity).CadastroAprovado = false;
-                    }*/
-                }
-            }
+       //             /*if (entityEntry.Entity == Empresa)
+       //             {
+       //                 ((Empresa)entityEntry.Entity).CadastroAprovado = false;
+       //             }*/
+       //         }
+       //     }
 
-            return base.SaveChanges();
-        }
+       //     return base.SaveChanges();
+       // }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -10,6 +10,7 @@ namespace InovaWebApi.Interfaces
     interface IUsuarioRepository
     {
         List<Usuario> ListarTodos();
+        int Cadastrar(Usuario novoUsuario);
         void Excluir(int id);
         Usuario BuscarPorId(int id);
         Object VerificarTipoUsuario(string email, string senha);

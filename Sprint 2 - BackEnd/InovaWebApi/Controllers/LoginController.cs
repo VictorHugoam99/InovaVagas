@@ -100,7 +100,12 @@ namespace InovaWebApi.Controllers
                     new Claim(JwtRegisteredClaimNames.Jti, id.ToString()),
 
                     // Armazena na Claim o tipo de usuário que foi autenticado (Administrador ou Comum)
-                    new Claim(ClaimTypes.Role, tipoRole)
+                    new Claim(ClaimTypes.Role, tipoRole),
+
+                    new Claim("Role", tipoRole),
+
+                    new Claim("Id", id.ToString())
+
                 };
 
                 // Define a chave de acesso ao token

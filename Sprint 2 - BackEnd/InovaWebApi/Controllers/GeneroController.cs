@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace InovaWebApi.Controllers
 {
     // Controller responsável pelos endpoints referentes aos generos
-    [Authorize]
     //gerar resposta json
     [Produces("application/json")]
     // Define que a rota de uma requisição será no formato domínio/api/NomeController

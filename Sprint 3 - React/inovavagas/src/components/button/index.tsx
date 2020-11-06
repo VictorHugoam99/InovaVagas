@@ -2,28 +2,18 @@ import React from 'react';
 import './style.css';
 import Button from 'react-bootstrap/Button';
 
-interface ButtonProps{
+interface ButtonProps {
     name: string;
-    tamanho: any;
+    tamanho?: any;
     screenSize?: string;
-    variante?: string;
+    onClick?: any;
+    // variante?: string;
 }
 
-const ButtonFull:React.FC<ButtonProps> = ({name, tamanho, screenSize, variante, ...rest}) => {
-    if(variante === 'outline-danger'){
-        return(
-            <Button variant="outline-danger" size={tamanho} type='submit' {...rest}>
-                {name}
-            </Button>
-        );
-    }    
-    else{
-        return(
-            <Button variant="danger" className="btn-danger" size={tamanho} type='submit' {...rest}>
-                {name}
-            </Button>
-        );
-    }
+const ButtonFull: React.FC<ButtonProps> = ({ name, tamanho, screenSize, onClick,...rest }) => {
+    return (
+        <input value={name} size={tamanho} type='submit' onClick={onClick}{...rest}/>
+    );
 }
 
 export default ButtonFull;

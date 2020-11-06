@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InovaWebApi.Domains;
 using InovaWebApi.Interfaces;
 using InovaWebApi.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -19,6 +20,20 @@ namespace InovaWebApi.Controllers
         public UsuarioController()
         {
             _usuarioRepository = new UsuarioRepository();
+        }
+
+        [HttpPost("cadastroUsuario")]
+        public IActionResult Post(Usuario novoUsuario)
+        {
+            try
+            {
+                int teste = _usuarioRepository.Cadastrar(novoUsuario);
+                return StatusCode(201, teste);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
         }
 
         [HttpGet]

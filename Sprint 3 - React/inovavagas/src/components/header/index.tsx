@@ -1,5 +1,4 @@
-import React from 'react';
-//import o useHistoy do reac-router-dom
+import React, { useEffect, useState } from 'react';//import o useHistoy do reac-router-dom
 import {Link, useHistory} from 'react-router-dom';
 //importa a verificação do token
 import {parseJwt} from '../../services/auth';
@@ -28,6 +27,7 @@ import {Navbar, NavDropdown} from 'react-bootstrap';
 //importação de css local e global
 import '../../assets/styles/global.css';
 import './style.css'
+// import jwt from 'jwt-decode';
 
 //define a interface header e os elementos  dela
 interface HeaderProps {
@@ -40,6 +40,32 @@ const Header:React.FC<HeaderProps> = (props) => {
     
     //variável que chama o componente History
     let history = useHistory();
+
+    const [nome, setNome] = useState('');
+    const [idUsuario, setIdUsuario] = useState(0);
+
+    // var token = localStorage.getItem('token-inova');
+    // var id: number = jwt<token>(token).jti;
+
+
+    useEffect(() => {
+        // listarPorId();
+    }, []);
+
+    const listarPorId = (id: number) => {
+        fetch('http://localhost:5000/api/Administrador/' + id, {
+            method: 'GET',
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('token-inova')
+            }
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            setIdUsuario(data.idAdministrador);
+            setNome(data.nomeAdministrador)
+        })
+        .catch(e => console.error(e));
+    }
 
     //função logout, removendo o token do localStorage e chamando a página de usuário deslogado
     const logout =() => {
@@ -177,7 +203,7 @@ const Header:React.FC<HeaderProps> = (props) => {
                     return (
                         //mostra o menu de administrador
                     <Menu>
-                        <p className="nomeAluno">Nome Aluno</p>
+                        <p className="nomeAluno">{nome}</p>
                         <a className="verPerfil" href="/">
                             Ver Perfil
                         </a>
@@ -212,17 +238,17 @@ const Header:React.FC<HeaderProps> = (props) => {
                         
                         <hr className="linha"/>
                         <p>Conta</p>
-                        <a className="menu-item" href="/empresasParceiras">
+                        <Link to='/config' className="menu-item" href="/empresasParceiras">
                             <img className="img-item" src={config} alt="vagas" width="20px"/>
                             Configuração
-                        </a>
-                        <a className="menu-item" href="" onClick={(event) => {
+                        </Link>
+                        <Link to='' className="menu-item" href="" onClick={(event) => {
                                 event.preventDefault();
                                 logout();
                         }}>
                             <img className="img-item" src={sair} alt="vagas" width="20px"/>
                             Sair
-                        </a>
+                        </Link>
                     </Menu>
                     )
                 }
@@ -235,54 +261,8 @@ const Header:React.FC<HeaderProps> = (props) => {
     return (
         <div className="principal">
             {/* apagar a tg menu e chamar a função menu */}
-                {/* {menu()} */}
-                    <Menu>
-                        <a className="nome-aluno">
-                            <img className="img-perfil" src={usuario} alt="vagas" width="50px"/>
-                            Nome Aluno
-                        </a>
-                        <a className="verPerfil" href="/">
-                            Ver Perfil
-                        </a>
-                        <hr className="linha"/>
-                        <a className="menu-item" href="/">
-                            <img className="img-item" src={agenda} alt="vagas" width="20px"/>
-                            Vagas
-                        </a>
-                        <a className="menu-item" href="/meusAlertas">
-                            <img className="img-item" src={alerta} alt="vagas" width="20px"/>
-                            Meus Alertas
-                        </a>
-                        <a className="menu-item" href="/avaliacoes">
-                            <img className="img-item" src={candidatura} alt="vagas" width="20px"/>
-                            Minhas Candidaturas
-                        </a>
-                        <a className="menu-item" href="/avaliacoes">
-                            <img className="img-item" src={avaliacao} alt="vagas" width="20px"/>
-                            Avaliações
-                        </a>
-                        <a className="menu-item" href="/empresasParceiras">
-                            <img className="img-item" src={predio} alt="vagas" width="20px"/>
-                            Empresas Parceiras
-                        </a>
-                        <a className="menu-item" href="/empresasParceiras">
-                            <img className="img-item" src={sobre} alt="vagas" width="20px"/>
-                            Sobre Inova
-                        </a>
-                        <hr className="linha"/>
-                        <p>Conta</p>
-                        <a className="menu-item" href="/empresasParceiras">
-                            <img className="img-item" src={config} alt="vagas" width="20px"/>
-                            Configuração
-                        </a>
-                        <a className="menu-item" href="" onClick={(event) => {
-                            event.preventDefault();
-                            logout();
-                        }}>
-                            <img className="img-item" src={sair} alt="vagas" width="20px"/>
-                            Sair
-                        </a>
-                    </Menu>
+            {menu()} 
+                    
             <Navbar bsPrefix="header">
                     <Navbar.Brand bsPrefix="img">
                             <img src={sinoNotificacao} alt="notificações" width="25"/>

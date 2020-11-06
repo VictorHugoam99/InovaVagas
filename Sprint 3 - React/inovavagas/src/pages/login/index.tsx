@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Input from '../../components/input/index';
 import imgUSenaiInova from '../../assets/images/senaiInova.png';
 import './style.css';
-import {Link, useHistory} from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import ButtonFull from '../../components/button/index';
 import '../../assets/styles/global.css'
-import {parseJwt} from '../../services/auth';
+import { parseJwt } from '../../services/auth';
 
 function Login() {
-    let history = useHistory()
+    let history = useHistory();
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -17,61 +17,58 @@ function Login() {
         const infoLogin = {
             email: email,
             senha: senha
-        }
+        };
 
-        fetch('http://localhost:5000/api/Login', {
+        fetch('http://localhost:5000/api/login', {
             method: 'POST',
             body: JSON.stringify(infoLogin),
-            headers:{
+            headers: {
                 'content-type':'application/json'
             }
         })
-        .then(response => response.json())
-        .then(data => {
-            if(data.token !== undefined)
-            {
-                localStorage.setItem('token', data.token);
-                if(parseJwt().Role === 'Administrador')
+            .then(resp => resp.json())
+            .then(data =>{
+                if (data.value.token != undefined) 
                 {
-                    history.push('/admin')
+                    localStorage.setItem('token-inova', data.value.token)
+                    
+                    if (parseJwt().Role === 'Administrador')
+                    {
+                        history.push('/admin');
+                    }
+                    if (parseJwt().Role === 'Empresa') 
+                    {
+                        history.push('/empresa');
+                    }
+                    if (parseJwt().Role === 'Aluno') 
+                    {
+                        history.push('/aluno');
+                    }
                 }
-
-                if(parseJwt().Role === 'Empresa')
-                {
-                    history.push('/empresa')
+                else {
+                    alert('Email ou senha incorretos');
                 }
-                
-                if(parseJwt().Role === 'Aluno')
-                {
-                    history.push('/aluno')
-                }
-            }
-            else
-            {
-                alert('Senha ou Email incorretos')
-            }
-        })
-        .catch(e => console.error(e));
+            })
+            .catch(e => console.error(e));
     };
 
-    return(
+    return (
         <div className='login'>
             <div className="content">
-                <h1>Bem-Vindx!</h1>
-                <form className='formulario' onSubmit={e=>{
-                    e.preventDefault();
+                <h1>Bem-Vinde!</h1>
+                <form className='formulario' onSubmit={event => {
+                    event.preventDefault();
                     login();
                 }}>
-                    <Input name='email' classCSS='input-placeholder' placeholder='Email' type='email' onChange={e=>setEmail(e.target.value)}/>
-                    <Input name='password' classCSS='input-placeholder' placeholder='Senha' type='password' onChange={e=>setSenha(e.target.value)}/><br/>
-                    <br/>
-                    <ButtonFull name='Entrar' tamanho='lg'/>
+                    <input name='email' placeholder='Email' type='text'  onChange={event => setEmail(event.target.value)} />
+                    <input name='password' placeholder='Senha' type='password' onChange={event => setSenha(event.target.value)} /><br />
+                    <input name='Entrar' type='submit'/>
                 </form>
                 <Link to='/selecaoCadastro' className='link'>Não tem conta? Cadastre-se!</Link>
             </div>
 
             <div className="logos">
-                <img src={imgUSenaiInova}/>
+                <img src={imgUSenaiInova} />
             </div>
         </div>
     );

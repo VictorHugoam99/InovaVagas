@@ -1,0 +1,66 @@
+.all{
+    margin: 0px 100px 0px 100px;
+}
+
+.titulo{margin-top: 40px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #fff;
+    border: 2px solid #DF2F2F;
+    font-weight: 40;
+    background-color: #DF2F2F;
+    width: 100%;
+    border-radius: .8rem .8rem 0 0;
+}
+.titulo h1{
+    font-size: 20px;
+    margin: 17px 0px 17px 20px;
+}
+/* Pesquisar */
+#pesquisar{
+    border-radius:80px;
+    width:300px;
+    height:32px;
+}
+
+#txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:190px;
+}
+
+#btnBusca{
+    border:none;
+    float:left;
+    height:32px;
+    border-radius:0 7px 7px 0;
+    width: 70px;
+    font-weight:bold;
+    background: #F3F3F3;
+    
+
+}
+
+#divBusca img{
+    float:left;
+}
+@media(max-width: 770px){
+    .all{
+        margin: 0;
+    }
+    .titulo h1{
+        font-size: 15px;
+        margin: 10px 0px 10px 20px;
+    }
+    #txtBusca{
+        width:125px;
+    }
+    
+    .table-sm td, .table-sm th {
+        padding: .1; /* NAO FUNCIONA: mudar as proportcoes da tabela*/
+    }
+}

@@ -30,6 +30,13 @@ namespace InovaWebApi.Repositories
             return null;
         }
 
+        public int Cadastrar(Usuario novoUsuario)
+        {
+            ctx.Usuario.Add(novoUsuario);
+            ctx.SaveChanges();
+            return ctx.Usuario.FirstOrDefault(u => u.Email == novoUsuario.Email).IdUsuario;
+        }
+
         public void Excluir(int id)
         {
             Usuario usuarioBuscado = ctx.Usuario.Find(id);

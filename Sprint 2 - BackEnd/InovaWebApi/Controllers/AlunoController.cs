@@ -28,7 +28,7 @@ namespace InovaWebApi.Controllers
         /// </summary>
         /// <returns>null</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [Authorize(Roles= "Administrador, Empresa")]
+        [Authorize]
         // GET: api/<Aluno>
         [HttpGet]
         public IActionResult Get()
@@ -80,7 +80,7 @@ namespace InovaWebApi.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         // POST api/<Aluno>
         [HttpPost]
-        public IActionResult Post(Aluno aluno)
+        public IActionResult Post([FromBody]Aluno aluno)
         {
             try
             {
@@ -101,7 +101,7 @@ namespace InovaWebApi.Controllers
         /// <returns>null</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [Authorize(Roles = "Administrador, Aluno")]
+        [Authorize]
         // PUT api/<Aluno>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, Aluno aluno)

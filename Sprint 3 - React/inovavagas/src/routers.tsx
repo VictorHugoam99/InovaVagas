@@ -5,12 +5,13 @@ import {parseJwt} from './services/auth';
 // import Login from './pages/login/index';
 // import Cadastro from './pages/cadastro/index'
 // import Perfil from './pages/perfil';
-import Teste from './pages/teste/teste';
 import Login from './pages/login/index';
 import SelecaoCadastro from './pages/selecaoCadastro/index';
 import AlunoCadastro from './pages/alunoCadastro/index';
 import EmpresaCadastro from './pages/empresaCadastro/index';
 import HomeAdm from './pages/homeAdm';
+import HomeAluno from './pages/homeAluno';
+import VisualizarVaga from './pages/visualizarVaga';
 
 
 function Routers() {
@@ -59,15 +60,15 @@ function Routers() {
     return (
         <BrowserRouter>
             <Switch>
-                {/* <RotaPrivadaAluno path="/" exact component={HomeAluno}/>
-                <Route path="/cadastro" component={Cadastro}/>
+                <RotaPrivadaAluno path="/aluno" exact component={HomeAluno}/>
+                <RotaPrivadaAluno path="/visualizarVaga" component={VisualizarVaga}/>
+                {/* <Route path="/cadastro" component={Cadastro}/>
             <RotaPrivadaAluno path="/perfil" component={Perfil}/> */}
-                <Route path='/' exact component={Teste}/>
-                <Route path="/login" component={Login}/>
+                <Route path='/' exact component={Login}/>
                 <Route path="/selecaoCadastro" component={SelecaoCadastro}/>
                 <Route path="/aCadastro" component={AlunoCadastro}/>
                 <Route path="/eCadastro" component={EmpresaCadastro}/>
-                <Route path="/admin" component={HomeAdm}/>
+                <RotaPrivadaAdministrador path="/admin" component={HomeAdm}/>
             </Switch>
         </BrowserRouter>
     )
