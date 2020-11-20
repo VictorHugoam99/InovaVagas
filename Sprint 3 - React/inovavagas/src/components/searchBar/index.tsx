@@ -12,7 +12,7 @@ interface SearchProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Search: React.FC<SearchProps> = ({ event, ...rest }) => {
     return (
-        <div>
+        <div className="search">
             <FormControl type='text' placeholder='Pesquisar...' onClick={event} bsPrefix='input'></FormControl>
         </div>
     );

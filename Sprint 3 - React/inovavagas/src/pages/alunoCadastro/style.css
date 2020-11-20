@@ -106,6 +106,14 @@
     margin: 60px 0;
 }
 
+.alunoCadastro .content select{
+    background-color: white;
+    border: none;
+    height: 45px;
+    color: #757575;
+    box-shadow: 0px 4px 10px #0000002a;
+    border-radius: 0.5em;
+}
 
 @media(max-width: 767px){
     .login{

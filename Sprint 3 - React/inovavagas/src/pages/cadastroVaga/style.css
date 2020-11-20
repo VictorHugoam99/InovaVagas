@@ -1,0 +1,67 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.cadastroVaga .titulo img{ 
+    width: 40px;
+    height: 40px;
+}
+
+.cadastroVaga .titulo h1{
+    font-size: 36px;
+    font-weight: bold;
+
+}
+
+.cadastroVaga .titulo{
+    display: flex;
+    padding-top: 100px;
+    padding-left: 300px;
+}
+
+.cadastroVaga .box{
+    display: flex;
+}
+
+.cadastroVaga .box .form form{
+    display: flex;
+    flex-direction: column;
+    padding-left: 510px;
+    margin-top: 30px;
+}
+
+.cadastroVaga .box .form form .inputs{
+    box-shadow: 0px 4px 10px #0000002a;
+    border: none;
+    width: 500px;
+    height: 45px;
+    border-radius: 0.5em;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.cadastroVaga .box .form form select{
+    box-shadow: 0px 4px 10px #0000002a;
+    border: none;
+    width: 500px;
+    height: 45px;
+    border-radius: 0.5em;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.cadastroVaga .botoes{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -6,21 +6,20 @@ import './style.css';
 interface CardProps{
     img: any;
     title: string;
-    description: string;
+    description?: string;
 }
 
 const CardEmpresa:React.FC<CardProps> = ({img, title, description, ...rest}) => {
     return(
         <div className="cardEmpresa">
-            <a className="container" href="/">
+            <Link className="container" to="/"/>
                 <Card bsPrefix="main-card">
                     <Card.Body bsPrefix="card-body">
                         <Card.Title bsPrefix="card-title">{title}</Card.Title>
                         <Card.Img bsPrefix="card-img" src={img}></Card.Img>
-                        <a className="perfil" href="/">Ver Perfil</a>
+                        <Link className="perfil" to="/perfilEmpresa">Ver Perfil</Link>
                     </Card.Body>
                 </Card>
-            </a>
         </div>
     )
 }

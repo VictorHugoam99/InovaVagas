@@ -11,6 +11,7 @@ import imgDashboard from '../../assets/images/dashboard_Branco.png';
 import imgPredioRed from '../../assets/images/predio_Vermelho.png';
 import Header from '../../components/header/index'
 import '../../assets/styles/global.css';
+import Card from 'react-bootstrap/Card';
 
 function HomeAdm() {
     return (
@@ -27,10 +28,30 @@ function HomeAdm() {
                 </div>
 
                 <div className="cards-line">
-                    <CardButton title='Ver Alunos' img={imgUserRed} />
-                    <CardButton title='Ver Vagas' img={imgAgendaRed} />
-                    <CardButton title='Ver Empresas' img={imgPredioRed} />
-                    <CardButton title='Ver Estágios' img={imgMaletaRed} />
+                <Card bsPrefix='main-card'>
+                    <Card.Body bsPrefix='card-body'>
+                        <Card.Img bsPrefix='card-img' src={imgUserRed} ></Card.Img>
+                        <Card.Title bsPrefix='card-title'>Ver alunos</Card.Title>
+                    </Card.Body>
+                </Card>
+                <Card bsPrefix='main-card'>
+                    <Card.Body bsPrefix='card-body'>
+                        <Card.Img bsPrefix='card-img' src={imgAgendaRed} ></Card.Img>
+                        <Card.Title bsPrefix='card-title'>Ver Empresas</Card.Title>
+                    </Card.Body>
+                </Card>
+                <Card bsPrefix='main-card'>
+                    <Card.Body bsPrefix='card-body'>
+                        <Card.Img bsPrefix='card-img' src={imgPredioRed} ></Card.Img>
+                        <Card.Title bsPrefix='card-title'>Ver Empresas</Card.Title>
+                    </Card.Body>
+                </Card>
+                <Card bsPrefix='main-card'>
+                    <Card.Body bsPrefix='card-body'>
+                        <Card.Img bsPrefix='card-img' src={imgMaletaRed} ></Card.Img>
+                        <Card.Title bsPrefix='card-title'>Ver Estágios</Card.Title>
+                    </Card.Body>
+                </Card>
                 </div>
 
                 <h2>Relatórios Gerais</h2>

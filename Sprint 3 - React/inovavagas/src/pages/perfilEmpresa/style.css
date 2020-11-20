@@ -1,0 +1,17 @@
+.perfilEmpresa .body-perfil .text-container .txt-title h2{
+    font-weight: bold;
+}
+
+.perfilEmpresa .body-perfil .text-container .color-line{
+    height: 5px;
+    width: 280px;
+    background-color: #ddd1d14e;
+}
+
+.perfilEmpresa .body-perfil .text-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 200px;
+    padding-top: 50px;
+    width: 80%;
+}

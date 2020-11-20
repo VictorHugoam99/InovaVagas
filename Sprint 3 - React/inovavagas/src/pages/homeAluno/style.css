@@ -3,7 +3,67 @@
     padding:0;
 }
 
-
-.searchBar {
+.main{
+    display: flex;
+    justify-content: center;
     padding-top: 100px;
 }
+
+.home-aluno .bg-color .main .searchBar .search .input{
+    background-size: 25px;
+    border-radius: 0.5em;
+    height: 30px;
+    width: 200px;
+    outline: none;
+    box-shadow: 0px 4px 10px #0000002a;
+    border: none;
+    padding-left: 45px;    
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px;
+}
+
+.home-aluno .bg-color .main .searchBar .search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.home-aluno .bg-color .main .searchBar h3{
+    color: white;
+    padding-bottom: 15px;
+}
+
+.home-aluno .bg-color .main .searchBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bg-color{
+    height: 300px;
+    background-color: #eb4a4a;
+}
+
+.cardVaga-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.home-aluno .bg-color .main .botao-buscar{
+    background-color: white;
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: #df2f2f;
+}
+
+

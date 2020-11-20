@@ -12,7 +12,9 @@ interface ButtonProps {
 
 const ButtonFull: React.FC<ButtonProps> = ({ name, tamanho, screenSize, onClick,...rest }) => {
     return (
-        <input value={name} size={tamanho} type='submit' onClick={onClick}{...rest}/>
+        <div>
+            <input  className='botao-entrar'value={name} size={tamanho} type='submit' onClick={onClick}{...rest}/>
+        </div>
     );
 }
 

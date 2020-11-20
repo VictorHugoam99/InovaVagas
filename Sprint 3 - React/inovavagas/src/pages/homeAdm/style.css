@@ -49,13 +49,13 @@
     justify-content: space-evenly;
     position: relative;
     bottom: 110px;
-    padding: 0 230px;
+    padding: 0 100px;
 }
 
 .homeAdm .bottom-card-line {
     display: flex;
     justify-content: space-evenly;
-    padding: 0 230px;
+    padding: 0 100px;
 }
 
 .homeAdm .bottom-card-line .info-aluno {
@@ -232,4 +232,45 @@
     padding: 25px 0;
     color: white;
     outline: none;
+}
+
+/* Cards */
+.homeAdm .content-homeAdm .cards-line .main-card {
+    display: flex;
+    border-radius: 0.5em;
+    height: 240px;
+    width: 220px;
+    outline: none;
+    box-shadow: 0px 4px 10px #0000002a;
+    border: none;
+    margin-bottom: 20px;
+    background-color: white;
+    margin: 0 10px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeAdm .content-homeAdm .cards-line .main-card .card-body .card-img {
+    width: 55px;
+    height: 50px;
+}
+
+.card-title {
+    font-size: 35px;
+    font-weight: lighter;
+    color: #DF2F2F;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.main-card:hover {
+    background-color: rgb(240, 240, 240);
 }

@@ -1,3 +1,13 @@
-.btn-danger{
-    background-color:  #DF2F2F;
+.botao-entrar{
+    display: flex;
+    justify-content: center;
+    background-color: #df2f2f;
+    text-decoration: none;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 0 60px;
 }

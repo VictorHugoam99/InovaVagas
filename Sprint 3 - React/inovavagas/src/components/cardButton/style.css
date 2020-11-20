@@ -2,13 +2,13 @@
     display: flex;
     border-radius: 0.5em;
     height: 240px;
-    width: 280px;
+    width: 180px;
     outline: none;
     box-shadow: 0px 4px 10px #0000002a;
     border: none;
     margin-bottom: 20px;
     background-color: white;
-
+    margin: 0 10px;
 }
 
 .card-body {

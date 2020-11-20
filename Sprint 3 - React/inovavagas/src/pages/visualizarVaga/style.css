@@ -7,16 +7,42 @@ main img {
     height:70px
 }
 
-h1 {
+.visualizarVaga main .content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 250px;
+    padding-top: 50px;
+}
+
+.visualizarVaga main .content h1 {
     font-size: 25px;
 }
-h2 {
+.visualizarVaga main .content h2 {
     font-size: 20px;
 }
-.btn {
+.visualizarVaga main .btn {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 250px;
 }
+
+.visualizarVaga main .btn .candidatar{
+    padding-right: 100px;
+}
+
+.visualizarVaga main .btn .voltar{
+    padding-right: 100px;
+}
+
+.visualizarVaga main .btn a{
+    color: #DF2F2F;
+}
+
+.visualizarVaga main .btn a:hover{
+    text-decoration: underline;
+}
+
 .desc {
     padding:10px;
 }
+

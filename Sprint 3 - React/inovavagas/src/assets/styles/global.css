@@ -5,11 +5,6 @@
     font-family: Helvetica, sans-serif;
 }
 
-html, body, .App , .root{
-    height: 100%;
-    min-height: 100vh;
-}
 
-*:focus {
-    outline: none;
-}
+
+

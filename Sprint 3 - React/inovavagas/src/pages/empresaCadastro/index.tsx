@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Input from '../../components/input/index';
-import imgUSenaiInova from '../../assets/images/senaiInova.png';
+import imgUSenaiInova from '../../assets/images/senai_Inova.png';
 import './style.css';
 import { Link, useHistory } from 'react-router-dom';
 import ButtonFull from '../../components/button/index';
 import '../../assets/styles/global.css'
+import { parseJwt } from '../../services/auth';
 
 function EmpresaCadastro() {
     // let history = useHistory();
@@ -21,6 +22,8 @@ function EmpresaCadastro() {
     //     //fetch()
 
     // };
+
+    // const history = useHistory();
 
     const [idEmpresa, setIdEmpresa] = useState(0);
     const [empresas, setEmpresas] = useState([]);
@@ -41,7 +44,7 @@ function EmpresaCadastro() {
     
     
     const salvar = () => {
-        
+
         const urlUsuario = 'http://localhost:5000/api/Usuario/cadastroUsuario';
         
             var idUser = 0;
@@ -98,8 +101,45 @@ function EmpresaCadastro() {
                     // authorization: 'Bearer' + localStorage.getItem('token-inova')
                 }
             })
-            .then(() => {alert("Empresa cadastrada")})
+            .then(() => alert("Empresa cadastrada com sucesso!"));
             })
+            
+        
+            // const login = () => {
+            //     const infoLogin = {
+            //         email: email,
+            //         senha: senha
+            //     };
+        
+            //     fetch('http://localhost:5000/api/login', {
+            //         method: 'POST',
+            //         body: JSON.stringify(infoLogin),
+            //         headers: {
+            //             'content-type': 'application/json'
+            //         }
+            //     })
+            //         .then(resp => resp.json())
+            //         .then(data => {
+            //             if (data.value.token != undefined) {
+            //                 localStorage.setItem('token-inova', data.value.token)
+        
+            //                 if (parseJwt().Role === 'Administrador') {
+            //                     history.push('/admin');
+            //                 }
+            //                 if (parseJwt().Role === 'Empresa') {
+            //                     history.push('/empresa');
+            //                 }
+            //                 if (parseJwt().Role === 'Aluno') {
+            //                     history.push('/aluno');
+            //                 }
+            //             }
+            //             else {
+            //                 alert('Houve um erro no login');
+            //             }
+            //         })
+            //         .catch(e => console.error(e));
+            // };
+        
     }
 
     return (

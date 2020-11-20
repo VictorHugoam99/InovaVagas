@@ -25,6 +25,7 @@
 }
 .all{
     width: 80%;
+    padding-top: 150px;
     margin: auto;
 }
 
@@ -32,7 +33,8 @@
     display: flex;
     margin-top: 30px;
 }
-img{
+
+.imagem img{
     border-radius: .6rem;
     width: 150px;
 }

@@ -5,7 +5,7 @@ import {parseJwt} from '../../services/auth';
 //importa a extensão do menu lateral
 import { slide as Menu } from 'react-burger-menu';
     // inicio importação de imagens
-import logos from '../../assets/images/senaiInova.png';
+import logos from '../../assets/images/senai_Inova.png';
 import agenda from '../../assets/images/agenda_Cinza.png';
 import alerta from '../../assets/images/myalerts_Cinza.png';
 import candidatura from '../../assets/images/handLove_Cinza.png';
@@ -49,11 +49,15 @@ const Header:React.FC<HeaderProps> = (props) => {
 
 
     useEffect(() => {
-        // listarPorId();
+        listarPorId(parseJwt().Id);
     }, []);
 
     const listarPorId = (id: number) => {
-        fetch('http://localhost:5000/api/Administrador/' + id, {
+        const url = parseJwt().Role === 'Administrador'? 'http://localhost:5000/api/Administrador/' :
+        parseJwt().Role === 'Aluno'? 'http://localhost:5000/api/Aluno/':
+        'http://localhost:5000/api/Empresa/';
+        
+        fetch(url + id, {
             method: 'GET',
             headers: {
                 authorization: 'Bearer ' + localStorage.getItem('token-inova')
@@ -61,8 +65,22 @@ const Header:React.FC<HeaderProps> = (props) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            setIdUsuario(data.idAdministrador);
-            setNome(data.nomeAdministrador)
+            if(parseJwt().Role === 'Aluno')
+            {
+                setIdUsuario(data.idAluno);
+                setNome(data.nome);
+            }
+            if(parseJwt().Role === 'Administrador')
+            {
+                setIdUsuario(data.idAdministrador);
+                setNome(data.nomeAdministrador);
+            }
+            if(parseJwt().Role === 'Empresa')
+            {
+                setIdUsuario(data.idEmpresa);
+                setNome(data.nomeFantasia);
+            }
+
         })
         .catch(e => console.error(e));
     }
@@ -93,7 +111,7 @@ const Header:React.FC<HeaderProps> = (props) => {
             return (
                 //mostra o menu de aluno
                 <Menu>
-                        <p className="nomeAluno">Nome Aluno</p>
+                        <p className="nomeAluno">{nome}</p>
                         <a className="verPerfil" href="/">
                             {/* <img className="img-item" src={agenda} alt="vagas" width="20px"/> */}
                             Ver Perfil
@@ -146,13 +164,13 @@ const Header:React.FC<HeaderProps> = (props) => {
                 return (
                     //mostra o menu de empresa
                     <Menu>
-                        <p className="nomeAluno">Nome Empresa</p>
-                        <a className="verPerfil" href="/">
+                        <p className="nomeAluno">{nome}</p>
+                        <a className="verPerfil" href="/perfilEmpresa">
                             {/* <img className="img-item" src={agenda} alt="vagas" width="20px"/> */}
                             Ver Perfil
                         </a>
                         <hr className="linha"/>
-                        <a className="menu-item" href="/">
+                        <a className="menu-item" href="/homeEmpresa">
                             <img className="img-item" src={home} alt="vagas" width="20px"/>
                             Início
                         </a>
@@ -160,7 +178,7 @@ const Header:React.FC<HeaderProps> = (props) => {
                             <img className="img-item" src={mais} alt="vagas" width="20px"/>
                             Cadastrar Nova Vaga
                         </a>
-                        <a className="menu-item" href="/meusAlertas">
+                        <a className="menu-item" href="/vagasPostadas">
                             <img className="img-item" src={agenda} alt="vagas" width="20px"/>
                             Suas Vagas Postadas
                         </a>
@@ -265,10 +283,10 @@ const Header:React.FC<HeaderProps> = (props) => {
                     
             <Navbar bsPrefix="header">
                     <Navbar.Brand bsPrefix="img">
-                            <img src={sinoNotificacao} alt="notificações" width="25"/>
+                            <img className="sininho" src={sinoNotificacao} alt="notificações" width="25px"/>
                     </Navbar.Brand>
                     <Navbar.Brand bsPrefix="img1">
-                            <img src={logos} alt="logos senai e inova vagas" width="250"/>
+                            <img className="logos "src={logos} alt="logos senai e inova vagas" width="250"/>
                     </Navbar.Brand>
             </Navbar>
         </div>

@@ -7,7 +7,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import FormLabel from 'react-bootstrap/FormLabel';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './style.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import FormCheckLabel from 'react-bootstrap/esm/FormCheckLabel';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {

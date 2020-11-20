@@ -1,0 +1,98 @@
+.back {
+    background: rgb(255,0,0);
+    background: linear-gradient(90deg, rgba(255,0,0,0.6979166666666667) 0%, rgba(235,7,7,0.6923144257703081) 100%);
+    color: white;
+    height: 400px;
+}
+
+.title {
+    display: flex;
+    align-items: flex-end;
+    padding-top: 108px;
+    padding-left: 270px;
+}
+
+.title h1 {
+    margin-bottom: 0;
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+    top: 5px;
+}
+
+.Empresa .back .title img {
+    width: 50px;
+    height: 50px;
+}
+
+.Empresa .cards-line {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.Empresa .um {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Empresa .dois{
+    display: flex;
+    justify-content: space-around; 
+}
+
+.barraP {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cards */
+.Empresa .back .cards-line .main-card {
+    display: flex;
+    border-radius: 0.5em;
+    height: 300px;
+    width: 300px;
+    outline: none;
+    box-shadow: 0px 4px 10px #0000002a;
+    border: none;
+    margin-bottom: 20px;
+    background-color: white;
+    margin: 30px 100px;
+}
+
+.Empresa .back .cards-line .main-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Empresa .back .cards-line .main-card .card-body .card-img {
+    width: 80px;
+    height: 70px;
+}
+
+.Empresa .back .cards-line .main-card .card-body .card-title {
+    font-size: 35px;
+    font-weight: lighter;
+    color: #3b4146;
+}
+
+.Empresa .back .cards-line .main-card .card-body .card-text {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #3b4146;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.main-card:hover {
+    background-color: rgb(240, 240, 240);
+}

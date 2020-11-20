@@ -1,0 +1,13 @@
+.tittle{
+    display: flex;
+    flex-direction: row;
+    padding-top: 100px;
+    padding-left: 200px;
+    color: white;
+}
+
+.fundo{
+    background-color: #eb4a4a;
+    width: 100%;
+    height: 300px;
+}

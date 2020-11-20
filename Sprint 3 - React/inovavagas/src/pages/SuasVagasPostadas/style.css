@@ -1,0 +1,30 @@
+.vagasPostadas .titulo-container .titulo{
+    color:  #3A3A3A;
+}
+
+.vagasPostadas .titulo-container{
+    display: flex;
+    padding-left: 300px;
+    padding-bottom: 10px;
+    padding-top: 100px;
+}
+
+.vagasPostadas .line{
+    height: 0.3em;
+    width: 200px;
+    margin-top: 0.1em;
+    margin-left: 350px;
+    background-color: rgb(240, 240, 240);
+}
+
+.vagasPostadas .cardVaga{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.vagasPostadas .cardVaga .cardVaga-container{
+    margin: 15px;
+}
+

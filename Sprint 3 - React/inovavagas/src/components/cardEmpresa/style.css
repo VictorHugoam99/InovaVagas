@@ -36,6 +36,7 @@
 
 .cardEmpresa .perfil:hover {
     color: #DF2F2F;
+    text-decoration: underline;
 }
 
 .cardEmpresa .main-card:hover {

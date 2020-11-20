@@ -1,4 +1,4 @@
-.main-card {
+.cardVaga .main-card {
     display: flex;
     border-radius: 0.5em;
     height: 250px;
@@ -8,27 +8,44 @@
     border: none;
 }
 
-.card-body {
+.cardVaga .main-card .card-body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 15px;
 }
 
-.card-body img {
-    width: 100px;
-    height: 45px;
-    float: right;
-    display:flex;
+
+
+.cardVaga .main-card .card-body .carText-container .content-container{
+    display: flex;
+    flex-direction: row;
 }
 
-.card-title {
-    font-size: 35px;
-    font-weight: lighter;
-    /* color: #DF2F2F; */
+.cardVaga .main-card .card-body .imagens .imgEmpresa-container .imgEmpresa {
+    width: 200px;
+    height: 70px;
+}
+/* 
+.cardVaga .main-card .card-body .imagens .imgEmpresa-container{
+    margin-top: 300px;
+} */
+
+.cardVaga .main-card .card-body .card-tittle {
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.card-text {
+.cardVaga .main-card .card-body .card-text {
     font-size: 15px;
     font-weight: lighter;
+    text-align:left ;
+    max-width: 450px;
+}
+
+.cardVaga .main-card .card-body .card-text1 {
+    font-size: 15px;
+    font-weight: bold;
     text-align:left ;
     max-width: 450px;
 }
@@ -51,20 +68,24 @@ a:hover {
 .card-info ul {
     list-style-type: none;
     font-size: 13px;
-    float:left;
 }
 
-.imagens{
+.cardVaga .main-card .card-body .imagens{
     display: flex;
     flex-direction: column-reverse;
-    align-items: flex-end;
 }
 
-.atalhos{
-    display: flex;
+
+.cardVaga .main-card .card-body .imagens .atalhos{
+    display: flex; 
+    justify-content: flex-end;
+    position: relative;
+    bottom: 35px;
 }
 
-.editar{
-    width: 100px;
+.cardVaga .main-card .card-body .imagens .atalhos img{
+    width: 20px;
+    height: 20px;
 }
+
 

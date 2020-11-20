@@ -6,13 +6,13 @@ import img from '../../assets/images/inovaVermelho.png';
 interface CardAlunoProps {
     tittle: string;
     text: string;
-    onClick: any;
+    onClick?: any;
     
 }
 
 const CardAluno: React.FC<CardAlunoProps> = ({ tittle, text, onClick,...rest }) => {
     return (
-        <div>
+        <div className="cardAluno">
             <Card.Link>
             <Card bsPrefix="main-card">
                 
@@ -20,15 +20,12 @@ const CardAluno: React.FC<CardAlunoProps> = ({ tittle, text, onClick,...rest }) 
                     <div>
                         <Card.Title bsPrefix="card-tittle">{tittle}</Card.Title>
                         <Card.Text bsPrefix="card-info"> 
-                        <ul>
-                            <li>Email aluno</li>
-                            <li>1119902871</li>
-
-                        </ul> </Card.Text>                   
+                        
+                        </Card.Text>                   
                         <Card.Img src={img}></Card.Img>
                         </div>
                     
-                    <Card.Text bsPrefix="card-text1">Principais competências e curso:</Card.Text>
+                    <Card.Text bsPrefix="card-text1">Descrição:</Card.Text>
                     <div>
                         <Card.Text bsPrefix="card-text">{text}</Card.Text>
                     </div>

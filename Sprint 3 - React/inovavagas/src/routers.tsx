@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import {parseJwt} from './services/auth';
-// import Home from './pages/home/index';
 // import Login from './pages/login/index';
 // import Cadastro from './pages/cadastro/index'
 // import Perfil from './pages/perfil';
@@ -12,6 +11,12 @@ import EmpresaCadastro from './pages/empresaCadastro/index';
 import HomeAdm from './pages/homeAdm';
 import HomeAluno from './pages/homeAluno';
 import VisualizarVaga from './pages/visualizarVaga';
+import CadastrosPendentes from './pages/Cadastros_Pendentes';
+import SuasVagasPostadas from './pages/SuasVagasPostadas/index'
+import HomeEmpresa from './pages/homeEmpresa/index';
+import CadastrarVagas from './pages/cadastroVaga/index';
+import EmpresasParceiras from './pages/Empresas_Parceiras';
+import PerfilEmpresa from './pages/perfilEmpresa';
 
 
 function Routers() {
@@ -62,13 +67,20 @@ function Routers() {
             <Switch>
                 <RotaPrivadaAluno path="/aluno" exact component={HomeAluno}/>
                 <RotaPrivadaAluno path="/visualizarVaga" component={VisualizarVaga}/>
+                <RotaPrivadaAluno path="/empresasParceiras" component={EmpresasParceiras}/>
+                <RotaPrivadaAluno path="/perfilEmpresa" component={PerfilEmpresa}/>
                 {/* <Route path="/cadastro" component={Cadastro}/>
             <RotaPrivadaAluno path="/perfil" component={Perfil}/> */}
                 <Route path='/' exact component={Login}/>
                 <Route path="/selecaoCadastro" component={SelecaoCadastro}/>
                 <Route path="/aCadastro" component={AlunoCadastro}/>
+                <Route path="/cadastrosPendentes" component={CadastrosPendentes}/>
                 <Route path="/eCadastro" component={EmpresaCadastro}/>
+                <Route path="/vagasPostadas" component={SuasVagasPostadas}/>
                 <RotaPrivadaAdministrador path="/admin" component={HomeAdm}/>
+                <RotaPrivadaEmpresa path="/empresa" exact component={HomeEmpresa}/>
+                <RotaPrivadaEmpresa path="/cadastroVaga" component={CadastrarVagas}/> 
+                <RotaPrivadaEmpresa path="/vagasPostadas" component={SuasVagasPostadas}/> 
             </Switch>
         </BrowserRouter>
     )
