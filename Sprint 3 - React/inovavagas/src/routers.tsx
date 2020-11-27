@@ -17,6 +17,8 @@ import HomeEmpresa from './pages/homeEmpresa/index';
 import CadastrarVagas from './pages/cadastroVaga/index';
 import EmpresasParceiras from './pages/Empresas_Parceiras';
 import PerfilEmpresa from './pages/perfilEmpresa';
+import EditarVaga from './pages/editarVaga';
+import CandidatosVaga from './pages/candidatosVaga/index';
 
 
 function Routers() {
@@ -79,8 +81,10 @@ function Routers() {
                 <Route path="/vagasPostadas" component={SuasVagasPostadas}/>
                 <RotaPrivadaAdministrador path="/admin" component={HomeAdm}/>
                 <RotaPrivadaEmpresa path="/empresa" exact component={HomeEmpresa}/>
-                <RotaPrivadaEmpresa path="/cadastroVaga" component={CadastrarVagas}/> 
+                <RotaPrivadaEmpresa path="/cadastroVaga" component={CadastrarVagas}/>  
                 <RotaPrivadaEmpresa path="/vagasPostadas" component={SuasVagasPostadas}/> 
+                <RotaPrivadaEmpresa path="/editarVaga" component={EditarVaga}/> 
+                <RotaPrivadaEmpresa path="/candidatosVaga" component={CandidatosVaga}/> 
             </Switch>
         </BrowserRouter>
     )

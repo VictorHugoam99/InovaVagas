@@ -2,13 +2,14 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .cadastroVaga .titulo img{ 
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .cadastroVaga .titulo h1{
     font-size: 36px;
-    color: #3B3B3B;
+    font-weight: bold;
+
 }
 
 .cadastroVaga .titulo{
@@ -24,9 +25,9 @@
 
 .cadastroVaga .box .form form{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .cadastroVaga .box .form form .inputs{
@@ -35,7 +36,6 @@
     width: 500px;
     height: 45px;
     border-radius: 0.5em;
-    padding-left: 20px;
     margin-bottom: 20px;
 }
 

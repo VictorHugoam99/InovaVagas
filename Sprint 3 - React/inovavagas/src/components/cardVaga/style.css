@@ -1,4 +1,4 @@
-.cardVaga .main-card {
+/* .cardVaga .main-card {
     display: flex;
     border-radius: 0.5em;
     height: 250px;
@@ -15,6 +15,10 @@
     margin: 0 15px;
 }
 
+.cardVaga .main-card .card-body .carText-container{
+    display: flex;
+    flex-direction: column;
+}
 
 
 .cardVaga .main-card .card-body .carText-container .content-container{
@@ -31,7 +35,7 @@
     margin-top: 300px;
 } */
 
-.cardVaga .main-card .card-body .card-tittle {
+/* .cardVaga .main-card .card-body .card-tittle {
     font-size: 20px;
     font-weight: bold;
 }
@@ -56,9 +60,9 @@ a:hover {
 
 .main-card:hover {
     background-color: rgb(240, 240, 240);
-}
+} */ 
 
-.btn {
+/* .btn {
     display : flex;
     justify-content: start;
     margin: 5px;
@@ -83,9 +87,17 @@ a:hover {
     bottom: 35px;
 }
 
+.cardVaga .main-card .card-body .imagens .atalhos button{
+    background-color: white;
+    border: none;
+}
+.cardVaga .main-card .card-body .imagens .atalhos button:hover{
+    background-color: rgb(240, 240, 240);
+}
+
 .cardVaga .main-card .card-body .imagens .atalhos img{
     width: 20px;
     height: 20px;
 }
 
-
+ */

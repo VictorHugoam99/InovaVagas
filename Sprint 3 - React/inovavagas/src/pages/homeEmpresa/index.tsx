@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../../components/header';
 import SearchBar from '../../components/searchBar';
 import Card from 'react-bootstrap/Card';
@@ -24,20 +24,20 @@ function HomeEmpresa() {
         <div className='Empresa'>
             <Header pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
 
-                <div className='back'>
-                    
+            <div className='back'>
+
                 <div className="title">
-                    <img src={imgHome} alt="casinha" width="5px"/>
-                    <h1>Inicio</h1>                    
+                    <img src={imgHome} alt="casinha" width="5px" />
+                    <h1>Inicio</h1>
                 </div>
 
                 <div className="barraP">
                     <SearchBar> </SearchBar>
                     <div className='bus'>
-                    <ButtonFull name='Buscar' tamanho='lg' />
+                        <ButtonFull name='Buscar' tamanho='lg' />
                     </div>
                 </div>
-                
+
 
                 <div className="cards-line">
                     <div className='um'>
@@ -49,39 +49,39 @@ function HomeEmpresa() {
                                     <Card.Text bsPrefix='card-text'>Cadastre novas vagas</Card.Text>
                                 </Card.Body>
                             </Card>
-                    </Link>
-                    <Link to="/vagasPostadas">
-                    <Card bsPrefix='main-card'>
-                        <Card.Body bsPrefix='card-body'>
-                            <Card.Img bsPrefix='card-img' src={imgAgenda} ></Card.Img>
-                            <Card.Title bsPrefix='card-title'>Vagas Postadas</Card.Title>
-                            <Card.Text bsPrefix='card-text'>Visualize as vagas já cadastradas aqui</Card.Text>
-                        </Card.Body>
-                    </Card>
-                    </Link>
+                        </Link>
+                        <Link to="/vagasPostadas">
+                            <Card bsPrefix='main-card'>
+                                <Card.Body bsPrefix='card-body'>
+                                    <Card.Img bsPrefix='card-img' src={imgAgenda} ></Card.Img>
+                                    <Card.Title bsPrefix='card-title'>Vagas Postadas</Card.Title>
+                                    <Card.Text bsPrefix='card-text'>Visualize as vagas já cadastradas aqui</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Link>
                     </div>
 
                     <div className='dois'>
-                    <Card bsPrefix='main-card'>
-                        <Card.Body bsPrefix='card-body'>
-                            <Card.Img bsPrefix='card-img' src={imgAvaliação} ></Card.Img>
-                            <Card.Title bsPrefix='card-title'>Avaliações</Card.Title>
-                            <Card.Text bsPrefix='card-text'>Acesse as avaliações dos candidados aqui</Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card bsPrefix='main-card'>
-                        <Card.Body bsPrefix='card-body'>
-                            <Card.Img bsPrefix='card-img' src={imgCandidato} ></Card.Img>
-                            <Card.Title bsPrefix='card-title'>Meus Candidatos</Card.Title>
-                            <Card.Text bsPrefix='card-text'>Visualize os candidatos salvos aqui</Card.Text>
-                        </Card.Body>
-                    </Card>
+                        <Card bsPrefix='main-card'>
+                            <Card.Body bsPrefix='card-body'>
+                                <Card.Img bsPrefix='card-img' src={imgAvaliação} ></Card.Img>
+                                <Card.Title bsPrefix='card-title'>Avaliações</Card.Title>
+                                <Card.Text bsPrefix='card-text'>Acesse as avaliações dos candidados aqui</Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card bsPrefix='main-card'>
+                            <Card.Body bsPrefix='card-body'>
+                                <Card.Img bsPrefix='card-img' src={imgCandidato} ></Card.Img>
+                                <Card.Title bsPrefix='card-title'>Meus Candidatos</Card.Title>
+                                <Card.Text bsPrefix='card-text'>Visualize os candidatos salvos aqui</Card.Text>
+                            </Card.Body>
+                        </Card>
                     </div>
-                    
+
                 </div>
-                <Footer/>
-                </div>
+                <Footer />
             </div>
+        </div>
     );
 }
 

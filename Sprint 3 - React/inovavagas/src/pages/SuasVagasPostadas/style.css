@@ -28,3 +28,109 @@
     margin: 15px;
 }
 
+/* card-vaga */
+
+.vagasPostadas .CardVaga .cardVaga .main-card {
+    display: flex;
+    border-radius: 0.5em;
+    height: 250px;
+    width: 750px;
+    outline: none;
+    box-shadow: 0px 4px 10px #0000002a;
+    border: none;
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .carText-container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .carText-container .content-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens .imgEmpresa-container .imgEmpresa {
+    width: 200px;
+    height: 70px;
+}
+/* 
+.cardVaga .main-card .card-body .imagens .imgEmpresa-container{
+    margin-top: 300px;
+} */
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .card-tittle {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    bottom: 45px;
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .card-text {
+    font-size: 15px;
+    font-weight: lighter;
+    text-align:left ;
+    max-width: 450px;
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .card-text1 {
+    font-size: 15px;
+    font-weight: bold;
+    text-align:left ;
+    max-width: 450px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.main-card:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.btn {
+    display : flex;
+    justify-content: start;
+    margin: 5px;
+
+}
+
+.card-info ul {
+    list-style-type: none;
+    font-size: 13px;
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens .atalhos{
+    display: flex; 
+    justify-content: flex-end;
+    position: relative;
+    bottom: 35px;
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens .atalhos button{
+    background-color: white;
+    border: none;
+}
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens .atalhos button:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens .atalhos img{
+    width: 20px;
+    height: 20px;
+}
+

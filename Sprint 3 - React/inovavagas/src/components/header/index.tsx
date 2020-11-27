@@ -170,7 +170,7 @@ const Header:React.FC<HeaderProps> = (props) => {
                             Ver Perfil
                         </a>
                         <hr className="linha"/>
-                        <a className="menu-item" href="/homeEmpresa">
+                        <a className="menu-item" href="/empresa">
                             <img className="img-item" src={home} alt="vagas" width="20px"/>
                             Início
                         </a>
