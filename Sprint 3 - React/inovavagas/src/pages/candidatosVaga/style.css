@@ -1,0 +1,96 @@
+.visualizarVaga .visualizar-content{
+    padding-bottom: 400px;
+}
+
+.visualizarVaga .visualizar-content .fundo-page{
+    background-color: #F45252;
+    height: 300px;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .title{
+    padding-bottom: 30px;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .title img{
+    width: 35px;
+    padding-bottom: 35px;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .title .title-text{
+    color: white;
+    padding-left: 10px;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .title .title-text h2{
+    font-weight: bold;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .title .title-text h3{
+    font-size: 22px;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+/* cardAluno */
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa{
+    margin: 0 110px;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa .main-card {
+    display: flex;
+    border-radius: 0.5em;
+    height: 200px;
+    width: 220px;
+    outline: none;
+    box-shadow: 0px 4px 10px #0000002a;
+    border: none;
+    background-color: white;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa .card-body {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa .card-img {
+    width: 60%;
+    height: 60%;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa .card-title {
+    font-size: 20px;
+    font-weight: lighter;
+    color: #3A3A3A;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa .perfil{
+    font-size: 15px;
+    font-weight: lighter;
+    color: #DF2F2F;
+    padding-top: 5px;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa .perfil:hover {
+    color: #DF2F2F;
+    text-decoration: underline;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa .main-card:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa{
+    padding-bottom: 2em;
+}
+
+.visualizarVaga .visualizar-content .fundo-page .card-container-aluno.cardEmpresa .container:hover{
+    text-decoration: none;
+} 

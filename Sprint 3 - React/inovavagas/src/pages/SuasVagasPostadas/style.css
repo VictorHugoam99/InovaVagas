@@ -58,6 +58,16 @@
     flex-direction: column;
 }
 
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens .imgEmpresa-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens .imgEmpresa-container .link-candidatos{
+    color: #DF2F2F;
+    text-decoration: underline;
+}
+
 .vagasPostadas .CardVaga .cardVaga .main-card .card-body .imagens .imgEmpresa-container .imgEmpresa {
     width: 200px;
     height: 70px;

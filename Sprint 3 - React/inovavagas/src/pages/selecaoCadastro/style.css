@@ -6,10 +6,8 @@
     min-height: 100vh;
 }
 
-.selecaoCadastro .content .title{
-    padding-right: 250px;
-    padding-bottom: 50px;
-    font-weight: bold;
+.selecaoCadastro .content .text{
+    padding-bottom: 20px;
 }
 
 .selecaoCadastro .content {

@@ -72,6 +72,23 @@ function SuasVagasPostadas() {
             })
             .catch(err => console.error(err));
     }
+
+    const visualizarVagaCandidatos = (id: number) => {
+        fetch('http://localhost:5000/api/Vaga/' + id, {
+            method: 'GET',
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('token-inova')
+            }
+        })
+            .then(resp => resp.json())
+            .then(dados => {
+                setIdVaga(dados.idVaga);
+                console.log(id);
+                // localStorage.setItem( 'IdVaga', String(idVaga))
+                history.push(`/candidatosVaga?id=${id}`)
+            })
+            .catch(err => console.error(err));
+    }
     return (
         <div className="vagasPostadas">
             <Header pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
@@ -83,7 +100,7 @@ function SuasVagasPostadas() {
                 {
                     vagas.map((item: any) => {
                         return <div className="cardVaga">
-                            <Link to="/candidatosVaga">
+                            
                                 <Card bsPrefix="main-card">
                                     <Card.Body bsPrefix="card-body">
                                         <div className="cardText-container">
@@ -96,6 +113,7 @@ function SuasVagasPostadas() {
                                         <div className="imagens">
                                             <div className="imgEmpresa-container">
                                                 <Card.Img src={inova} bsPrefix="imgEmpresa" ></Card.Img>
+                                                <Link className="link-candidatos" to="/candidatosVaga" onClick={() => visualizarVagaCandidatos(item.idVaga)}>Ver Candidatos</Link>
                                             </div>
                                             <div className="atalhos">
                                                 <button onClick={() => visualizarVagaEditar(item.idVaga)}>
@@ -119,7 +137,6 @@ function SuasVagasPostadas() {
 
                                     </Card.Body>
                                 </Card>
-                            </Link>
                         </div>
                     })
                 }

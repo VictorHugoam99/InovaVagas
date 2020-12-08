@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import './style.css';
 import '../../assets/styles/global.css';
 
-import imgHome from '../../assets/images/home_Cinza.png';
+import imgHome from '../../assets/images/home_Branca.png';
 import imgMais from '../../assets/images/mais_Cinza.png';
 import imgAgenda from '../../assets/images/agenda_Cinza.png';
 import imgAvaliação from '../../assets/images/avaliacao_Cinza.png';

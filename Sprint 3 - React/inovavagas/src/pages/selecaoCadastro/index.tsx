@@ -14,7 +14,7 @@ function SelecaoCadastro() {
         <div className='selecaoCadastro'>
             <div className="content">
 
-                <div>
+                <div className="text">
                     <h1 className="title">Quem é você?</h1>
                 </div>
 
