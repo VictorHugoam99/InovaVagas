@@ -24,8 +24,6 @@ namespace InovaWebApi.Controllers
             _candidaturaRepository = new CandidaturaRepository();
         }
 
-        [Authorize(Roles = "Administrador")]
-        [Authorize(Roles = "Empresa")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -41,9 +39,6 @@ namespace InovaWebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrador")]
-        [Authorize(Roles = "Empresa")]
-        [Authorize(Roles = "Aluno")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -65,6 +60,19 @@ namespace InovaWebApi.Controllers
 
         }
 
+        [HttpGet("aluno/{id}")]
+        public IActionResult ListarPorIdAluno(int id)
+        {
+            try
+            {
+                return Ok(_candidaturaRepository.GetByIdAluno(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
         //Cadastro
         [Authorize(Roles = "Aluno")]
         [HttpPost]
@@ -72,8 +80,14 @@ namespace InovaWebApi.Controllers
         {
             try
             {
-                _candidaturaRepository.Add(candidatura);
-                return Ok();
+
+                //if (_candidaturaRepository.GetByIdAluno(Convert.ToInt32(candidatura.IdAluno)) == null)
+                //{
+                    _candidaturaRepository.Add(candidatura);
+                    return Ok();
+                //}
+
+                //return BadRequest("Você já se candidatou para esta vaga");
 
             }
             catch (Exception error)

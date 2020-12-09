@@ -38,6 +38,20 @@ namespace InovaWebApi.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                return Ok(_formaContratacaoRepository.BuscarPorId(id));
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+
+        }
+
         /// <summary>
         /// inscreve uma nova forma de contratação
         /// </summary>

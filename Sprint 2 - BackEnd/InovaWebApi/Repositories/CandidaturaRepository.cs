@@ -16,10 +16,14 @@ namespace InovaWebApi.Repositories
 
         public void Add(Candidatura candidatura)
         {
-            candidatura.Contratado = false;
-            candidatura.IdStatusCandidatura = 1;
-            ctx.Candidatura.Add(candidatura);
-            ctx.SaveChanges();
+ 
+                Vaga vagaBuscada = ctx.Vaga.Find(candidatura.IdVaga);
+                candidatura.Contratado = false;
+                vagaBuscada.NumeroCandidatos++;
+                candidatura.IdStatusCandidatura = 1;
+                ctx.Candidatura.Add(candidatura);
+                ctx.SaveChanges();
+
         }
 
         public void AtualizarStatus(int id)
@@ -215,6 +219,15 @@ namespace InovaWebApi.Repositories
                 .Include(c => c.IdVagaNavigation.IdFormaContratacao)*/
                 .FirstOrDefault(c => c.IdCandidatura == id);
             return candidaturaBuscada;
+        }
+
+        public List<Candidatura> GetByIdAluno(int id)
+        {
+            return ctx.Candidatura.Where(c => c.IdAlunoNavigation.IdAluno == id)
+                .Include(c => c.IdVagaNavigation)
+                .Include(c => c.IdStatusCandidaturaNavigation)
+                .Include(c => c.IdVagaNavigation.IdEmpresaNavigation)
+                .ToList();
         }
 
         public void Update(int id, Candidatura candidaturaAtualizada)

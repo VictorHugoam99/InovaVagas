@@ -47,7 +47,7 @@ namespace InovaWebApi.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("aprovar/{id}")]
         public IActionResult AprovarEmpresa(int id)
         {
             try
@@ -69,7 +69,6 @@ namespace InovaWebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrador, Aluno")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -77,16 +76,29 @@ namespace InovaWebApi.Controllers
         {
             try
             {
-                return Ok(_empresaRepository.Listar());
+                return Ok(_empresaRepository.ListarEmpresasAprovadas());
             }
             catch (Exception error)
             {
 
-                return BadRequest( error);
-            }            
+                return BadRequest(error);
+            }
         }
 
-        [Authorize(Roles = "Administrador, Empresa")]
+        [HttpGet("empresas")]
+        public IActionResult GetUnaproved()
+        {
+            try
+            {
+                return Ok(_empresaRepository.ListarEmpresasSemAprovar());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {

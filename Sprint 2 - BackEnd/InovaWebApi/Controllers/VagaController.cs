@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using InovaWebApi.Domains;
 using InovaWebApi.Interfaces;
 using InovaWebApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InovaWebApi.Controllers
 {
+    //[Authorize]
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
@@ -49,6 +51,26 @@ namespace InovaWebApi.Controllers
                 return BadRequest(e);
             }
 
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+             {
+                Vaga vagaBuscada = _vagaRepository.BuscarPorId(id);
+
+                if (vagaBuscada != null)
+                {
+                    return Ok(vagaBuscada);
+                }
+
+                return NotFound("Nenhuma vaga foi encontrada");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
         }
 
         /// <summary>

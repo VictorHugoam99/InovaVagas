@@ -131,7 +131,7 @@ namespace InovaWebApi.Repositories
 
         public List<Vaga> ListarPorEmpresa(int idEmpresa)
         {
-            return ctx.Vaga.Where(v => v.IdEmpresa == idEmpresa).ToList();
+            return ctx.Vaga.Where(v => v.IdEmpresa == idEmpresa).Include(v => v.IdEmpresaNavigation).ToList();
         }
 
         public List<Vaga> ListarPorEndereco(string endereco)

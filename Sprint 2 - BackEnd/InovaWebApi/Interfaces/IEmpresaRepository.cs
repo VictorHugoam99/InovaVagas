@@ -10,7 +10,8 @@ namespace InovaWebApi.Interfaces
     {
         void Cadastrar(Empresa novaEmpresa);
         List<Empresa> Listar();
-        List<Empresa> ListarEmpresasAprovadas(bool status);
+        List<Empresa> ListarEmpresasAprovadas();
+        List<Empresa> ListarEmpresasSemAprovar();
         Empresa BuscarPorId(int id);
         void Atualizar(int id, Empresa empresaAtualizada);
         void Deletar(int id);

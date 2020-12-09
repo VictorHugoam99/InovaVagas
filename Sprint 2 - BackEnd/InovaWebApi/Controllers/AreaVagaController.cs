@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace InovaWebApi.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+    [Authorize]
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]

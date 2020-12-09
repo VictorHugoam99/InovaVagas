@@ -53,21 +53,21 @@ namespace InovaWebApi.Controllers
                         tipoRole = "Administrador";
                         Administrador administradorBuscado = _administradorRepository.Login(login.Email, login.Senha);
 
-                        return Ok(CriacaoToken(administradorBuscado.IdUsuarioNavigation.Email, Convert.ToInt32(administradorBuscado.IdAdministrador), tipoRole));
+                        return Ok(CriacaoToken(administradorBuscado.IdUsuarioNavigation.Email, Convert.ToInt32(administradorBuscado.IdAdministrador), tipoRole, administradorBuscado.NomeAdministrador));
                     }
                     if (usuarioGenerico is Aluno)
                     {
                         tipoRole = "Aluno";
                         Aluno alunoBuscado = _alunoRepository.Login(login.Email, login.Senha);
 
-                        return Ok(CriacaoToken(alunoBuscado.IdUsuarioNavigation.Email, Convert.ToInt32(alunoBuscado.IdAluno), tipoRole));
+                        return Ok(CriacaoToken(alunoBuscado.IdUsuarioNavigation.Email, Convert.ToInt32(alunoBuscado.IdAluno), tipoRole, alunoBuscado.Nome));
                     }
                     if (usuarioGenerico is Empresa)
                     {
                         tipoRole = "Empresa";
                         Empresa empresaBuscado = _empresaRepository.Login(login.Email, login.Senha);
 
-                        return Ok(CriacaoToken(empresaBuscado.IdUsuarioNavigation.Email, Convert.ToInt32(empresaBuscado.IdEmpresa), tipoRole));
+                        return Ok(CriacaoToken(empresaBuscado.IdUsuarioNavigation.Email, Convert.ToInt32(empresaBuscado.IdEmpresa), tipoRole, empresaBuscado.NomeFantasia));
                     }
                     else
                     {
@@ -87,7 +87,7 @@ namespace InovaWebApi.Controllers
         }
 
         [NonAction]
-        private IActionResult CriacaoToken(string email, int id, string tipoRole)
+        private IActionResult CriacaoToken(string email, int id, string tipoRole, string nome)
         {
             try
             {
@@ -104,7 +104,9 @@ namespace InovaWebApi.Controllers
 
                     new Claim("Role", tipoRole),
 
-                    new Claim("Id", id.ToString())
+                    new Claim("Id", id.ToString()),
+
+                    new Claim("Nome", nome )
 
                 };
 

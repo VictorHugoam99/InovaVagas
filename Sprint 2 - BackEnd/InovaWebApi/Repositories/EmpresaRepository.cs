@@ -176,7 +176,40 @@ namespace InovaWebApi.Repositories
                 .ToList();
         }
 
-        public List<Empresa> ListarEmpresasAprovadas(bool status)
+        //public List<Empresa> ListarEmpresasAprovadas(bool status)
+        //{
+        //    return ctx.Empresa
+        //        .Select(e => new Empresa()
+        //        {
+        //            IdEmpresa = e.IdEmpresa,
+        //            RazaoSocial = e.RazaoSocial,
+        //            NomeFantasia = e.NomeFantasia,
+        //            RamoAtuacao = e.RamoAtuacao,
+        //            TamanhoEmpresa = e.TamanhoEmpresa,
+        //            Cnpj = e.Cnpj,
+        //            Cnae = e.Cnae,
+        //            CadastroAprovado = e.CadastroAprovado,
+        //            PessoaResponsavel = e.PessoaResponsavel,
+        //            VagasTotais = e.VagasTotais,
+        //            VagasDisponiveis = e.VagasDisponiveis,
+        //            VagasEncerradas = e.VagasEncerradas,
+
+        //            IdUsuarioNavigation = new Usuario()
+        //            {
+        //                IdUsuario = e.IdUsuarioNavigation.IdUsuario,
+        //                Email = e.IdUsuarioNavigation.Email,
+        //                Senha = e.IdUsuarioNavigation.Senha,
+        //                Endereco = e.IdUsuarioNavigation.Endereco,
+        //                Telefone = e.IdUsuarioNavigation.Telefone,
+        //                Celular = e.IdUsuarioNavigation.Celular,
+        //                EmailContato = e.IdUsuarioNavigation.EmailContato,
+        //                DataCadastro = e.IdUsuarioNavigation.DataCadastro
+        //            }
+        //        })
+        //        .ToList().FindAll(e => e.CadastroAprovado == status);
+        //}
+
+        public List<Empresa> ListarEmpresasAprovadas()
         {
             return ctx.Empresa
                 .Select(e => new Empresa()
@@ -206,7 +239,40 @@ namespace InovaWebApi.Repositories
                         DataCadastro = e.IdUsuarioNavigation.DataCadastro
                     }
                 })
-                .ToList().FindAll(e => e.CadastroAprovado == status);
+                .ToList().FindAll(e => e.CadastroAprovado == true);
+        }
+
+        public List<Empresa> ListarEmpresasSemAprovar()
+        {
+            return ctx.Empresa
+                .Select(e => new Empresa()
+                {
+                    IdEmpresa = e.IdEmpresa,
+                    RazaoSocial = e.RazaoSocial,
+                    NomeFantasia = e.NomeFantasia,
+                    RamoAtuacao = e.RamoAtuacao,
+                    TamanhoEmpresa = e.TamanhoEmpresa,
+                    Cnpj = e.Cnpj,
+                    Cnae = e.Cnae,
+                    CadastroAprovado = e.CadastroAprovado,
+                    PessoaResponsavel = e.PessoaResponsavel,
+                    VagasTotais = e.VagasTotais,
+                    VagasDisponiveis = e.VagasDisponiveis,
+                    VagasEncerradas = e.VagasEncerradas,
+
+                    IdUsuarioNavigation = new Usuario()
+                    {
+                        IdUsuario = e.IdUsuarioNavigation.IdUsuario,
+                        Email = e.IdUsuarioNavigation.Email,
+                        Senha = e.IdUsuarioNavigation.Senha,
+                        Endereco = e.IdUsuarioNavigation.Endereco,
+                        Telefone = e.IdUsuarioNavigation.Telefone,
+                        Celular = e.IdUsuarioNavigation.Celular,
+                        EmailContato = e.IdUsuarioNavigation.EmailContato,
+                        DataCadastro = e.IdUsuarioNavigation.DataCadastro
+                    }
+                })
+                .ToList().FindAll(e => e.CadastroAprovado == false);
         }
 
         public List<Empresa> ListarPorOrdemAlfabetica()
