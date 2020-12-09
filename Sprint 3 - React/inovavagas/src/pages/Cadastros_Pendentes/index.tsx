@@ -10,6 +10,7 @@ import './style.css';
 
 function CadastrosPendentes() {
     const [empresasDesaprovadas, setEmpresasDesaprovadas] = useState([]);
+    const [isEmpresa, setIdEmpresa] = useState(0);
     const [nomeFantasia, setNomeFantasia] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
@@ -35,12 +36,27 @@ function CadastrosPendentes() {
                 setEmail(dados.email);
                 setTelefone(dados.telefone);
                 setAreaAtuacao(dados.areaAtuacao);
+                setIdEmpresa(dados.idEmpresa);
             })
             .catch(e => console.error(e));
     }
 
     const aprovar = (id:any) => {
-        
+        fetch('http://localhost:5000/api/Empresa/aprovar/' + id, {
+            method:'PUT',
+            headers: {
+                authorization: 'Bearer' + localStorage.getItem('token-inova')
+            }
+        })
+        .then(resp => {
+            if (resp.status === 204) {
+                alert('Empresa aprovada com sucesso!');
+            }
+            else {
+                alert('Não foi possível aprovar essa Empresa')
+            }
+        })
+        .catch(e => console.error(e));
     } 
     return (
         <div className="cadastrosPendentes">
@@ -67,7 +83,7 @@ function CadastrosPendentes() {
                                                 <p className="simple-text">{item.ramoAtuacao}</p>
                                             </div>
                                             <div className="button-container">
-                                                <ButtonFull name="Aprovar" />
+                                                <button className="button" onClick={() => aprovar(item.idEmpresa)}>Aprovar</button>
                                                 <button className="buttonVasado">Recusar</button>
                                             </div>
                                         </div>

@@ -125,25 +125,21 @@ const Header:React.FC<HeaderProps> = (props) => {
                             <img className="img-item" src={alerta} alt="vagas" width="20px"/>
                             Meus Alertas
                         </a>
-                        <a className="menu-item" href="/avaliacoes">
+                        <a className="menu-item" href="/minhasCandidaturas">
                             <img className="img-item" src={candidatura} alt="vagas" width="20px"/>
                             Minhas Candidaturas
-                        </a>
-                        <a className="menu-item" href="/avaliacoes">
-                            <img className="img-item" src={avaliacao} alt="vagas" width="20px"/>
-                            Avaliações
                         </a>
                         <a className="menu-item" href="/empresasParceiras">
                             <img className="img-item" src={predio} alt="vagas" width="20px"/>
                             Empresas Parceiras
                         </a>
-                        <a className="menu-item" href="/empresasParceiras">
+                        <a className="menu-item" href="/sobreInova">
                             <img className="img-item" src={sobre} alt="vagas" width="20px"/>
                             Sobre Inova
                         </a>
                         <hr className="linha"/>
                         <p>Conta</p>
-                        <a className="menu-item" href="/empresasParceiras">
+                        <a className="menu-item" href="/config">
                             <img className="img-item" src={config} alt="vagas" width="20px"/>
                             Configuração
                         </a>
@@ -174,7 +170,7 @@ const Header:React.FC<HeaderProps> = (props) => {
                             <img className="img-item" src={home} alt="vagas" width="20px"/>
                             Início
                         </a>
-                        <a className="menu-item" href="/">
+                        <a className="menu-item" href="/cadastroVaga">
                             <img className="img-item" src={mais} alt="vagas" width="20px"/>
                             Cadastrar Nova Vaga
                         </a>
@@ -182,25 +178,17 @@ const Header:React.FC<HeaderProps> = (props) => {
                             <img className="img-item" src={agenda} alt="vagas" width="20px"/>
                             Suas Vagas Postadas
                         </a>
-                        <a className="menu-item" href="/avaliacoes">
-                            <img className="img-item" src={avaliacao} alt="vagas" width="20px"/>
-                            Avaliações
-                        </a>
-                        <a className="menu-item" href="/avaliacoes">
-                            <img className="img-item" src={candidato} alt="vagas" width="20px"/>
-                            Meus Candidatos
-                        </a>
                         <a className="menu-item" href="/empresasParceiras">
                             <img className="img-item" src={relatorio} alt="vagas" width="20px"/>
                             Relatórios
                         </a>
-                        <a className="menu-item" href="/empresasParceiras">
+                        <a className="menu-item" href="/sobreInova">
                             <img className="img-item" src={sobre} alt="vagas" width="20px"/>
                             Sobre Inova
                         </a>
                         <hr className="linha"/>
                         <p>Conta</p>
-                        <a className="menu-item" href="/empresasParceiras">
+                        <a className="menu-item" href="/config">
                             <img className="img-item" src={config} alt="vagas" width="20px"/>
                             Configuração
                         </a>
@@ -238,7 +226,7 @@ const Header:React.FC<HeaderProps> = (props) => {
                         <NavDropdown title="Gerenciar Empresas" id="collasible-nav-dorpdown" bsPrefix="dropdown">
                             <NavDropdown.Item href="">Ver Empresas</NavDropdown.Item>
                             <NavDropdown.Item href="">Relatório de Empresas</NavDropdown.Item>
-                            <NavDropdown.Item href="">Cadastros Pendentes</NavDropdown.Item>
+                            <NavDropdown.Item href="/cadastrosPendentes">Cadastros Pendentes</NavDropdown.Item>
                         </NavDropdown>
                         
                         <NavDropdown title="Gerenciar Vagas" id="collasible-nav-dorpdown" bsPrefix="dropdown">
@@ -251,7 +239,6 @@ const Header:React.FC<HeaderProps> = (props) => {
                             <NavDropdown.Item href="">Ver Estágios</NavDropdown.Item>
                             <NavDropdown.Item href="">Relatório de Estágios</NavDropdown.Item>
                             <NavDropdown.Item href="">Visitas Técnicas</NavDropdown.Item>
-                            <NavDropdown.Item href="">Avaliações</NavDropdown.Item>
                         </NavDropdown>
                         
                         <hr className="linha"/>

@@ -19,6 +19,7 @@ import EmpresasParceiras from './pages/Empresas_Parceiras';
 import PerfilEmpresa from './pages/perfilEmpresa';
 import EditarVaga from './pages/editarVaga';
 import CandidatosVaga from './pages/candidatosVaga/index';
+import Configuracao from './pages/configuracoes';
 
 
 function Routers() {
@@ -85,6 +86,9 @@ function Routers() {
                 <RotaPrivadaEmpresa path="/vagasPostadas" component={SuasVagasPostadas}/> 
                 <RotaPrivadaEmpresa path="/editarVaga" component={EditarVaga}/> 
                 <RotaPrivadaEmpresa path="/candidatosVaga" component={CandidatosVaga}/> 
+                <RotaPrivadaEmpresa path="/config" component={Configuracao}/> 
+                <RotaPrivadaAdministrador path="/config" component={Configuracao}/> 
+                <RotaPrivadaAluno path="/config" component={Configuracao}/> 
             </Switch>
         </BrowserRouter>
     )

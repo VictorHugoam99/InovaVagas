@@ -1,0 +1,129 @@
+input {
+    margin-right: 10px !important;
+}
+
+.config .content-config .background {
+    background: linear-gradient(90deg, rgba(255,0,0,0.6979166666666667) 0%, rgba(235,7,7,0.6923144257703081) 100%);
+    padding-top: 12px;
+    color: white;
+    height: 390px;     
+}
+
+.title{
+    margin-left: 250px;
+}
+
+.config .content-config .background p{
+    opacity: 50%;
+    margin-left: 450px;
+
+}
+
+.config .formulario {
+    flex-direction: column;
+    position: relative;
+    bottom: 110px;
+    padding:0 130px;
+}
+
+.config .alinhamento{
+    display: flex;
+    justify-content: center;
+}
+
+#razaoSocial{
+    width: 45%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#emailcontato{
+    width: 45%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#nomeFantasia{
+    width: 45%;
+    border: 1px solid #000;
+    border-radius: 10px; 
+}
+
+#ende{
+    width: 45%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#atua{
+    width: 45%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#tele{
+    width:22%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#celu{
+    width:22%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#sede{
+    width: 22%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#segui{
+    width:22%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#pessoaResponsa{
+    width:45%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#cnpJ{
+    width: 22%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#cnaE{
+    width:22%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#emai{
+    width:45%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#senhaC{
+    width: 45%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#confS{
+    width: 45%;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#botoes{
+    display: flex;
+
+    margin-left: 385px;
+    width: 700px;
+}

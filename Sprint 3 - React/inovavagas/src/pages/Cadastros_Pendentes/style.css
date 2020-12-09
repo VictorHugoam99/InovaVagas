@@ -64,6 +64,16 @@
     margin-left: 40px;
 }
 
+.cadastrosPendentes .fundo .corpo .card-container .main-card .card-body .card-content .button-container .button{
+    background-color: #df2f2f;
+    text-decoration: none;
+    outline: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color:  white;
+}
 
 .cadastrosPendentes .fundo .corpo .card-container .main-card .card-body .card-content .card-text-container .main-text{
     font-size: 25px;
