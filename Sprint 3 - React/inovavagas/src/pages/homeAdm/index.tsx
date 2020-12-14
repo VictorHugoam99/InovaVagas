@@ -20,7 +20,7 @@ function HomeAdm() {
 
             <div className='content-homeAdm'>
                 <div className="background">
-                    <div className="title">
+                    <div className="title-adm">
                         <img src={imgDashboard} alt="ícone da dashboard" />
                         <h1>Dashboard</h1>
                     </div>
@@ -28,30 +28,10 @@ function HomeAdm() {
                 </div>
 
                 <div className="cards-line">
-                <Card bsPrefix='main-card'>
-                    <Card.Body bsPrefix='card-body'>
-                        <Card.Img bsPrefix='card-img' src={imgUserRed} ></Card.Img>
-                        <Card.Title bsPrefix='card-title'>Ver alunos</Card.Title>
-                    </Card.Body>
-                </Card>
-                <Card bsPrefix='main-card'>
-                    <Card.Body bsPrefix='card-body'>
-                        <Card.Img bsPrefix='card-img' src={imgAgendaRed} ></Card.Img>
-                        <Card.Title bsPrefix='card-title'>Ver Empresas</Card.Title>
-                    </Card.Body>
-                </Card>
-                <Card bsPrefix='main-card'>
-                    <Card.Body bsPrefix='card-body'>
-                        <Card.Img bsPrefix='card-img' src={imgPredioRed} ></Card.Img>
-                        <Card.Title bsPrefix='card-title'>Ver Empresas</Card.Title>
-                    </Card.Body>
-                </Card>
-                <Card bsPrefix='main-card'>
-                    <Card.Body bsPrefix='card-body'>
-                        <Card.Img bsPrefix='card-img' src={imgMaletaRed} ></Card.Img>
-                        <Card.Title bsPrefix='card-title'>Ver Estágios</Card.Title>
-                    </Card.Body>
-                </Card>
+                    <CardButton img={imgUserRed} title="Ver Alunos" />
+                    <CardButton img={imgAgendaRed} title="Ver Vagas" />
+                    <CardButton img={imgPredioRed} title="Ver Empresas" />
+                    <CardButton img={imgMaletaRed} title="Ver Estágios" />
                 </div>
 
                 <h2>Relatórios Gerais</h2>

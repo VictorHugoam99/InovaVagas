@@ -104,6 +104,14 @@ namespace InovaWebApi.Repositories
         {
             Vaga vagaBuscada = ctx.Vaga.Find(id);
 
+            List<Candidatura> candidaturas = ctx.Candidatura.Where(c => c.IdVaga == vagaBuscada.IdVaga).ToList();
+
+            foreach (var candidatura in candidaturas)
+            {
+                ctx.Candidatura.Remove(candidatura);
+                ctx.SaveChanges();
+            }
+
             ctx.Vaga.Remove(vagaBuscada);
 
             ctx.SaveChanges();

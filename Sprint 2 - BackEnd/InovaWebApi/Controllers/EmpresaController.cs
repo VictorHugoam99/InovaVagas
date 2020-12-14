@@ -113,7 +113,6 @@ namespace InovaWebApi.Controllers
             
         }
 
-        [Authorize(Roles = "Empresa")]
         [HttpPut("{id}")]
         public IActionResult Put(int id,  Empresa empresaAtualizada)
         {

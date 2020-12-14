@@ -52,7 +52,10 @@ function SuasVagasPostadas() {
                 authorization: 'Bearer' + localStorage.getItem('token-inova')
             }
         })
-            .then(resp => resp.json())
+            .then(resp => {
+                alert('Vaga deletada com sucesso!');
+                listarVagaPorEmpresa(parseJwt().Id);
+            })
             .catch(e => console.error(e));
     }
 

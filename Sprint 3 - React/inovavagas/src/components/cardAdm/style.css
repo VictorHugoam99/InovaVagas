@@ -8,25 +8,25 @@
     border: none;
 }
 
-.card-body {
+.main-card .card-body {
     display: flex;
     flex-direction: column;
 }
 
-.card-body img {
+.main-card .card-body img {
     width: 100px;
     height: 45px;
     float: right;
     display:flex;
 }
 
-.card-title {
+.main-card .card-body .card-title {
     font-size: 35px;
     font-weight: lighter;
     /* color: #DF2F2F; */
 }
 
-.card-text {
+.main-card .card-body .card-text {
     font-size: 15px;
     font-weight: lighter;
     text-align:left ;

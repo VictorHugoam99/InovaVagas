@@ -47,7 +47,7 @@
     background-color: #eb4a4a;
 }
 
-.cardVaga-container{
+.home-aluno .cardVaga-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,5 +65,8 @@
     border-radius: 10px;
     color: #df2f2f;
 }
+
+/* card-vaga */
+
 
 

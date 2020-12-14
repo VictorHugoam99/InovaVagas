@@ -1,0 +1,125 @@
+.txt{
+    margin-left: 10px;
+}
+
+.sobreI .centro .tittle img {
+    margin-left: 135px;
+    margin-right: 100px;
+    margin-top: 85px;
+    width: 265px;
+    height: 115px; 
+}
+
+.sobreI .centro .tittle h1{
+    margin-top: 60px;
+}
+
+.sobreI .centro .tittle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.txt{
+    display: flex;
+    flex-wrap: wrap;
+    width: 110px; 
+    padding: 25px;  
+}
+
+
+.txtPd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 150px;
+    margin-right: 50px;
+}
+
+.comeco{
+    width: 500px;
+}
+
+.comeco h3{
+    padding-bottom: 20px;
+}
+
+.comeco p{
+    max-width: 50ch;
+    font-size: 14px;
+}
+
+.comeco img{
+    padding-bottom: 15px;
+    width: 90px;
+    height: 90px;
+}
+
+.fim{
+    width: 500px;
+}
+
+.fim h3{
+    padding-bottom: 20px;
+}
+
+.fim img{
+    padding-bottom: 15px;
+    width: 90px;
+    height: 90px;
+}
+
+.fim p{
+    max-width: 50ch;
+    font-size: 14px;
+}
+
+.backgraudSobre {
+    background: #DF2F2F;
+    color: white;
+    height: 56px; 
+    width: 900px;
+    margin: auto;
+}
+
+.senas img {
+    margin-top: 10px;
+    margin-left: 400px;  
+    height: 30px;
+}
+
+.outroComeco p{
+    font-size: 14px;
+    margin-left: 250px;
+}
+
+.sobreI .centro .description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.fotinho img{
+    width: 500px !important;
+    height: 300px !important;
+}
+
+.fotinho2 img{
+    width: 500px !important;
+    height: 300px !important;
+}
+
+.fotinho3 img{
+    width: 500px !important;
+    height: 300px !important;
+}
+
+.fts{
+    margin-left: 20px;
+    position:relative;
+    margin-right: 260px;
+}

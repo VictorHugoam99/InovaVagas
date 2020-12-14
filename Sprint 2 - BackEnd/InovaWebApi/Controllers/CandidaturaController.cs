@@ -60,6 +60,19 @@ namespace InovaWebApi.Controllers
 
         }
 
+        [HttpGet("vaga/{id}")]
+        public IActionResult GetByVaga(int id)
+        {
+            try
+            {
+                return Ok(_candidaturaRepository.GetByVaga(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
         [HttpGet("aluno/{id}")]
         public IActionResult ListarPorIdAluno(int id)
         {

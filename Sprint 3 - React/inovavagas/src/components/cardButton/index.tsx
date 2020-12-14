@@ -11,7 +11,7 @@ interface CardButtonProps {
 
 const CardButton: React.FC<CardButtonProps> = ({ title, img, description }) => {
     return (
-        <div>
+        <div className="card-button">
             <Card bsPrefix='main-card'>
                 <Card.Body bsPrefix='card-body'>
                     <Card.Img bsPrefix='card-img' src={img} ></Card.Img>

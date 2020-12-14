@@ -112,18 +112,14 @@ const Header:React.FC<HeaderProps> = (props) => {
                 //mostra o menu de aluno
                 <Menu>
                         <p className="nomeAluno">{nome}</p>
-                        <a className="verPerfil" href="/">
+                        <a className="verPerfil" href="/perfilAluno">
                             {/* <img className="img-item" src={agenda} alt="vagas" width="20px"/> */}
                             Ver Perfil
                         </a>
                         <hr className="linha"/>
-                        <a className="menu-item" href="/">
+                        <a className="menu-item" href="/aluno">
                             <img className="img-item" src={agenda} alt="vagas" width="20px"/>
                             Vagas
-                        </a>
-                        <a className="menu-item" href="/meusAlertas">
-                            <img className="img-item" src={alerta} alt="vagas" width="20px"/>
-                            Meus Alertas
                         </a>
                         <a className="menu-item" href="/minhasCandidaturas">
                             <img className="img-item" src={candidatura} alt="vagas" width="20px"/>
@@ -178,10 +174,6 @@ const Header:React.FC<HeaderProps> = (props) => {
                             <img className="img-item" src={agenda} alt="vagas" width="20px"/>
                             Suas Vagas Postadas
                         </a>
-                        <a className="menu-item" href="/empresasParceiras">
-                            <img className="img-item" src={relatorio} alt="vagas" width="20px"/>
-                            Relatórios
-                        </a>
                         <a className="menu-item" href="/sobreInova">
                             <img className="img-item" src={sobre} alt="vagas" width="20px"/>
                             Sobre Inova
@@ -210,11 +202,11 @@ const Header:React.FC<HeaderProps> = (props) => {
                         //mostra o menu de administrador
                     <Menu>
                         <p className="nomeAluno">{nome}</p>
-                        <a className="verPerfil" href="/">
+                        <a className="verPerfil" href="/perfilAdm">
                             Ver Perfil
                         </a>
                         <hr className="linha"/>
-                        <a className="menu-item" href="/">
+                        <a className="menu-item" href="/admin">
                             <img className="img-item" src={home} alt="vagas" width="20px"/>
                             Início
                         </a>
@@ -269,9 +261,9 @@ const Header:React.FC<HeaderProps> = (props) => {
             {menu()} 
                     
             <Navbar bsPrefix="header">
-                    <Navbar.Brand bsPrefix="img">
+                    {/* <Navbar.Brand bsPrefix="img">
                             <img className="sininho" src={sinoNotificacao} alt="notificações" width="25px"/>
-                    </Navbar.Brand>
+                    </Navbar.Brand> */}
                     <Navbar.Brand bsPrefix="img1">
                             <img className="logos "src={logos} alt="logos senai e inova vagas" width="250"/>
                     </Navbar.Brand>

@@ -1,3 +1,7 @@
+.cardAluno{
+    padding-bottom: 30px;
+}
+
 .cardAluno .main-card {
     display: flex;
     border-radius: 0.5em;
@@ -8,40 +12,39 @@
     border: none;
 }
 
-.card-body {
+.cardAluno .main-card .card-body {
     display: flex;
     flex-direction: column;
 }
 
-.card-body img {
+.cardAluno .main-card .card-body .card-img {
     width: 100px;
     height: 45px;
-    float: right;
-    display:flex;
+
 }
 
-.card-title {
+.cardAluno .main-card .card-body .card-title {
     font-size: 35px;
     font-weight: lighter;
 }
 
-.card-text {
+.cardAluno .main-card .card-body.card-text {
     font-size: 15px;
     font-weight: lighter;
     text-align:left ;
     max-width: 450px;
 }
 
-.main-card:hover {
+.cardAluno .main-card:hover {
     background-color: rgb(240, 240, 240);
 }
 
-.card-info ul {
+.cardAluno .main-card .card-body .card-info ul {
     list-style-type: none;
     font-size: 13px;
     float:left;
 }
 
-.card-info ul li{
+.cardAluno .main-card .card-body .card-info ul li{
     padding:5px;
 }

@@ -15,7 +15,7 @@ function SelecaoCadastro() {
             <div className="content">
 
                 <div className="text">
-                    <h1 className="title">Quem é você?</h1>
+                    <h1 className="titleS">Quem é você?</h1>
                 </div>
 
                 <div className="cards">

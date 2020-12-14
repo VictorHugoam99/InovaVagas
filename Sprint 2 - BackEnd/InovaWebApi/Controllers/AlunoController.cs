@@ -101,7 +101,6 @@ namespace InovaWebApi.Controllers
         /// <returns>null</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [Authorize]
         // PUT api/<Aluno>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, Aluno aluno)

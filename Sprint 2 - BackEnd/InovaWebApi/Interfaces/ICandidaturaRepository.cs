@@ -19,6 +19,8 @@ namespace InovaWebApi.Interfaces
         /// Um usuário buscado
         Candidatura GetById(int id);
 
+        List<Candidatura> GetByVaga(int id);
+
         List<Candidatura> GetByIdAluno(int id);
 
         /// Cadastra um novo candidato

@@ -20,7 +20,7 @@ namespace InovaWebApi.Repositories
             Aluno alunoBuscado = ctx.Aluno.FirstOrDefault(a => a.IdAluno == id);
             Usuario usuarioBuscado = ctx.Usuario.FirstOrDefault(u => u.IdUsuario == alunoBuscado.IdUsuario);
             //Curso cursoBuscado = ctx.Curso.FirstOrDefault(c => c.IdCurso == alunoBuscado.IdCurso);
-            alunoAtualizado.IdUsuarioNavigation = usuarioBuscado;
+            alunoBuscado.IdUsuarioNavigation = usuarioBuscado;
 /*          alunoBuscado.IdCursoNavigation = cursoBuscado;
             alunoBuscado.IdCursoNavigation.IdTurnoNavigation = turnoBuscado;
             alunoBuscado.IdCursoNavigation.IdTermoNavigation = termoBuscado;
@@ -28,32 +28,32 @@ namespace InovaWebApi.Repositories
 
             if (alunoBuscado != null)
             {
-                if (alunoAtualizado.Nome != null)
+                if (alunoAtualizado.Nome != null && alunoAtualizado.Nome != "")
                 {
                     alunoBuscado.Nome = alunoAtualizado.Nome;
                 }
 
-                if (alunoAtualizado.Cpf != null)
+                if (alunoAtualizado.Cpf != null && alunoAtualizado.Cpf != "")
                 {
                     alunoBuscado.Cpf = alunoAtualizado.Cpf;
                 }
 
-                if (alunoAtualizado.Rg != null)
+                if (alunoAtualizado.Rg != null && alunoAtualizado.Rg != "")
                 {
                     alunoBuscado.Rg = alunoAtualizado.Rg;
                 }
 
-                if (alunoAtualizado.NumeroMatricula != null)
+                if (alunoAtualizado.NumeroMatricula != null && alunoAtualizado.NumeroMatricula != "")
                 {
                     alunoBuscado.NumeroMatricula = alunoAtualizado.NumeroMatricula;
                 }
 
-                if (alunoAtualizado.DataNasc != null)
+                if (alunoAtualizado.DataNasc != null && alunoAtualizado.DataNasc != Convert.ToDateTime("01/01/0001"))
                 {
                     alunoBuscado.DataNasc = alunoAtualizado.DataNasc;
                 }
 
-                if (alunoAtualizado.TituloPerfil != null)
+                if (alunoAtualizado.TituloPerfil != null && alunoAtualizado.TituloPerfil != "")
                 {
                     alunoBuscado.TituloPerfil = alunoAtualizado.TituloPerfil;
                 }
@@ -63,42 +63,42 @@ namespace InovaWebApi.Repositories
                     alunoBuscado.Empregado = alunoAtualizado.Empregado;
                 }
 
-                if (alunoAtualizado.IdCurso != null)
+                if (alunoAtualizado.IdCurso != null && alunoAtualizado.IdCurso != 0)
                 {
                     alunoBuscado.IdCurso = alunoAtualizado.IdCurso;
                 }
 
-                if (alunoAtualizado.IdUsuarioNavigation.Email != null)
+                if (alunoAtualizado.IdUsuarioNavigation.Email != null && alunoAtualizado.IdUsuarioNavigation.Email != "")
                 {
                     alunoBuscado.IdUsuarioNavigation.Email = alunoAtualizado.IdUsuarioNavigation.Email;
                 }
 
-                if (alunoAtualizado.IdUsuarioNavigation.Senha != null)
+                if (alunoAtualizado.IdUsuarioNavigation.Senha != null && alunoAtualizado.IdUsuarioNavigation.Senha != "")
                 {
                     alunoBuscado.IdUsuarioNavigation.Senha = alunoAtualizado.IdUsuarioNavigation.Senha;
                 }
 
-                if (alunoAtualizado.IdUsuarioNavigation.EmailContato != null)
+                if (alunoAtualizado.IdUsuarioNavigation.EmailContato != null && alunoAtualizado.IdUsuarioNavigation.EmailContato != "")
                 {
                     alunoBuscado.IdUsuarioNavigation.EmailContato = alunoAtualizado.IdUsuarioNavigation.EmailContato;
                 }
 
-                if (alunoAtualizado.IdUsuarioNavigation.Endereco != null)
+                if (alunoAtualizado.IdUsuarioNavigation.Endereco != null && alunoAtualizado.IdUsuarioNavigation.Endereco != "")
                 {
                     alunoBuscado.IdUsuarioNavigation.Endereco = alunoAtualizado.IdUsuarioNavigation.Endereco;
                 }
 
-                if (alunoAtualizado.IdUsuarioNavigation.Telefone != null)
+                if (alunoAtualizado.IdUsuarioNavigation.Telefone != null && alunoAtualizado.IdUsuarioNavigation.Telefone != "")
                 {
                     alunoBuscado.IdUsuarioNavigation.Telefone = alunoAtualizado.IdUsuarioNavigation.Telefone;
                 }
 
-                if (alunoAtualizado.IdUsuarioNavigation.Celular != null)
+                if (alunoAtualizado.IdUsuarioNavigation.Celular != null && alunoAtualizado.IdUsuarioNavigation.Celular != "")
                 {
                     alunoBuscado.IdUsuarioNavigation.Celular = alunoAtualizado.IdUsuarioNavigation.Celular;
                 }
 
-                if (alunoAtualizado.IdGenero != null)
+                if (alunoAtualizado.IdGenero != null && alunoAtualizado.IdGenero != 0)
                 {
                     alunoBuscado.IdGenero = alunoAtualizado.IdGenero;
                 }

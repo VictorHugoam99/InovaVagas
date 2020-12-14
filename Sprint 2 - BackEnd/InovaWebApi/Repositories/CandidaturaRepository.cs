@@ -26,6 +26,15 @@ namespace InovaWebApi.Repositories
 
         }
 
+        public List<Candidatura> GetByVaga(int id)
+        {
+            return ctx.Candidatura.Where(c => c.IdVaga == id)
+                .Include(c => c.IdVagaNavigation)
+                .Include(c => c.IdStatusCandidaturaNavigation)
+                .Include(c => c.IdAlunoNavigation)
+                .ToList();
+        }
+
         public void AtualizarStatus(int id)
         {
             Candidatura candidaturaBuscada = GetById(id);

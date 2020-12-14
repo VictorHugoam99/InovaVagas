@@ -51,13 +51,33 @@ function CadastrosPendentes() {
         .then(resp => {
             if (resp.status === 204) {
                 alert('Empresa aprovada com sucesso!');
+                listarSemAprovar();
             }
             else {
                 alert('Não foi possível aprovar essa Empresa')
             }
         })
         .catch(e => console.error(e));
-    } 
+    }
+
+    const trash = (id: number) => {
+        fetch('http://localhost:5000/api/Empresa/' + id, {
+            method: 'DELETE',
+            headers: {
+                authorization: 'Bearer' + localStorage.getItem('token-inova')
+            }
+        })
+            .then(resp => {
+                if (resp.status === 200) {
+                    alert('Empresa reprovada e apagada com sucesso');
+                    listarSemAprovar();
+                }
+                else {
+                    alert('Não foi possível reprovar essa Empresa')
+                }
+            })
+            .catch(e => console.error(e));
+    }
     return (
         <div className="cadastrosPendentes">
             <Header pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
@@ -84,7 +104,7 @@ function CadastrosPendentes() {
                                             </div>
                                             <div className="button-container">
                                                 <button className="button" onClick={() => aprovar(item.idEmpresa)}>Aprovar</button>
-                                                <button className="buttonVasado">Recusar</button>
+                                                <button className="buttonVasado" onClick={() => trash(item.idEmpresa)}>Recusar</button>
                                             </div>
                                         </div>
                                         <div className="container">

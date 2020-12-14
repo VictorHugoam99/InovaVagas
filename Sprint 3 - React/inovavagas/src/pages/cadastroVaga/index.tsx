@@ -151,7 +151,7 @@ function CadastrarVagas() {
                             }
                         </select>
 
-                        <select name='idareavaga' placeholder='IdAreaVaga' onChange={e => setIdAreaVaga(e.target.value)} required>
+                        <select name='idareavaga' placeholder='IdAreaVaga' value={IdAreaVaga} onChange={e => setIdAreaVaga(e.target.value)} required>
                             <option value='0' disabled >Area</option>
                             {
                                 AreaVagamap.map((item: any) =>{

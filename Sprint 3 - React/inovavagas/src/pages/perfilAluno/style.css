@@ -1,0 +1,97 @@
+body{
+    background-color: #EEEEEE;
+}
+.all{
+    width: 80%;
+    margin: auto;
+}
+
+.tamanho{
+    display: flex;
+    align-items: center;
+} 
+
+/* / Descricao Usuario / */
+.box2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+.box2 .sobreusuario{
+    width: 70%;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 1%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    /* / text-align: center; / */
+    box-shadow: 0px 4px 10px #0000002a;
+}
+
+.box2 .sobreusuario p{
+    margin: 0 5px;
+    margin-top: 50px;
+    font-size: 20px;
+    color: #C92B2B;
+    margin-right: 27%; 
+}
+.box2 .sobreusuario a{
+    margin-left: 5px;
+    display: flex;
+    color: #C92B2B;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.box2 .sobreusuario .editar{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* / .box2 .sobreusuario a {float:right} / */
+
+.box2 .sobreusuario img {float:right}
+
+.box2 .sobreusuario img{
+    margin-left: 8px;
+    width: 20px;
+    width:15px;
+    margin-top: 8px;
+    display: flex;
+    display: inline-block;
+    vertical-align: middle;
+    justify-content: space-between;
+}
+.box2 .sobreusuario .p .trash{
+    margin-top: 7px;
+    width: 13px;
+}
+.box2 .sobreusuario h2{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.box2 .sobreusuario h3{
+    font-size: 16px;
+}
+.box2 .sobreusuario h4{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box2 .sobreusuario p, h2, h3, h4{
+    margin-left: 30px;
+}
+.box2 .sobreusuario .color-line{
+    display: flex;
+    height: 2px;
+    width: 280px;
+    background-color: #6d6d6d;
+    margin-bottom: 40px;
+    width: 70%;
+    height: 1px;
+    top: 50%;
+    margin-left: 30px;
+    box-shadow:  #6d6d6d;
+    transform: translateY(-50%);
+}

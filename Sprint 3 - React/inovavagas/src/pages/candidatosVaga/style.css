@@ -8,7 +8,9 @@
 }
 
 .visualizarVaga .visualizar-content .fundo-page .title{
-    padding-bottom: 30px;
+    padding-top: 80px;
+    display: flex;
+    padding-bottom: 40px;
 }
 
 .visualizarVaga .visualizar-content .fundo-page .title img{
@@ -38,7 +40,7 @@
 
 /* cardAluno */
 .visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa{
-    margin: 0 110px;
+    margin: 0 100px;
 }
 
 .visualizarVaga .visualizar-content .fundo-page .card-container-aluno .cardEmpresa .main-card {

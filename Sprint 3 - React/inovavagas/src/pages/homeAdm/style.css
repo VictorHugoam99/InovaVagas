@@ -17,15 +17,16 @@
     padding-top: 108px;
     padding-left: 270px;
     color: white;
-    height: 475px;
+    height: 375px;
 }
 
-.homeAdm .content-homeAdm .background .title {
+.homeAdm .content-homeAdm .background .title-adm {
     display: flex;
     align-items: flex-end;
+    justify-content: flex-start;
 }
 
-.homeAdm .content-homeAdm .background .title h1 {
+.homeAdm .content-homeAdm .background .title-adm h1 {
     margin-bottom: 0;
     margin-left: 13px;
     font-size: 50px;
@@ -34,7 +35,7 @@
     top: 5px;
 }
 
-.homeAdm .content-homeAdm .background .title img {
+.homeAdm .content-homeAdm .background .title-adm img {
     width: 56px;
     height: 56px;
 }
@@ -238,7 +239,7 @@
 .homeAdm .content-homeAdm .cards-line .main-card {
     display: flex;
     border-radius: 0.5em;
-    height: 240px;
+    height: 200px;
     width: 220px;
     outline: none;
     box-shadow: 0px 4px 10px #0000002a;

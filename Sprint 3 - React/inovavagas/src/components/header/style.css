@@ -1,6 +1,4 @@
-.header{
-    display: flex;
-    justify-content: space-between;
+.principal .header{
     padding: 0 6em;
     height: 2.5em;
     padding-top: 6px;
@@ -9,9 +7,12 @@
 .principal{
     background-color: #DF2F2F;
     box-shadow: 0px 4px 10px #0000002a;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
+
 
 .principal .header .img .sininho{
     width: 25px;
@@ -40,7 +41,6 @@
 
   /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    position: absolute;
     background: whitesmoke;
 }
 

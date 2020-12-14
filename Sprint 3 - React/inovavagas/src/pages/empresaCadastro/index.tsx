@@ -8,22 +8,7 @@ import '../../assets/styles/global.css'
 import { parseJwt } from '../../services/auth';
 
 function EmpresaCadastro() {
-    // let history = useHistory();
-
-    // const [email, setEmail] = useState('');
-    // const [senha, setSenha] = useState('');
-
-    // const login = () => {
-    //     const infoLogin = {
-    //         email: email,
-    //         senha: senha
-    //     };
-
-    //     //fetch()
-
-    // };
-
-    // const history = useHistory();
+    let history = useHistory();
 
     const [idEmpresa, setIdEmpresa] = useState(0);
     const [empresas, setEmpresas] = useState([]);
@@ -41,105 +26,113 @@ function EmpresaCadastro() {
     const [cnae, setCnae] = useState('');
     const [pessoaResponsavel, setPessoaResponsavel] = useState('');
 
-    
-    
+
+
     const salvar = () => {
 
         const urlUsuario = 'http://localhost:5000/api/Usuario/cadastroUsuario';
-        
-            var idUser = 0;
-            const formUsuario = {
-                email: email,
-                senha: senha,
-                imagemPerfil: null,
-                endereco: endereco,
-                telefone: telefone,
-                celular: celular,
-                emailContato: emailContato
-            };
 
-            fetch(urlUsuario, {
-                method: 'POST',
-                body: JSON.stringify(formUsuario),
-                headers: {
-                    'content-type' : 'application/json',
-                    // authorization: 'Bearer' + localStorage.getItem('token-inova')
-                }
-            })
+        var idUser = 0;
+        const formUsuario = {
+            email: email,
+            senha: senha,
+            imagemPerfil: null,
+            endereco: endereco,
+            telefone: telefone,
+            celular: celular,
+            emailContato: emailContato
+        };
+
+        fetch(urlUsuario, {
+            method: 'POST',
+            body: JSON.stringify(formUsuario),
+            headers: {
+                'content-type': 'application/json',
+                // authorization: 'Bearer' + localStorage.getItem('token-inova')
+            }
+        })
             .then(response => response.json())
             .then(resp => {
                 idUser = resp
             })
             .then(() => {
                 const urlRequest = 'http://localhost:5000/api/Empresa';
-        
-            const form = {
-                razaoSocial: razaoSocial,
-                nomeFantasia: nomeFantasia,
-                ramoAtuacao: ramoAtuacao,
-                tamanhoEmpresa: tamanhoEmpresa,
-                cnpj: cnpj,
-                cnae: cnae,
-                cadastroAprovado: true,
-                pessoaResponsavel: pessoaResponsavel,
-                email: email,
-                senha: senha,
-                imagemPerfil: null,
-                endereco: endereco,
-                telefone: telefone,
-                celular: celular,
-                emailContato: emailContato, 
-                idUsuario: idUser
-            };
-            console.log(JSON.stringify(form))
 
-            fetch(urlRequest, {
+                const form = {
+                    razaoSocial: razaoSocial,
+                    nomeFantasia: nomeFantasia,
+                    ramoAtuacao: ramoAtuacao,
+                    tamanhoEmpresa: tamanhoEmpresa,
+                    cnpj: cnpj,
+                    cnae: cnae,
+                    cadastroAprovado: true,
+                    pessoaResponsavel: pessoaResponsavel,
+                    email: email,
+                    senha: senha,
+                    imagemPerfil: null,
+                    endereco: endereco,
+                    telefone: telefone,
+                    celular: celular,
+                    emailContato: emailContato,
+                    idUsuario: idUser
+                };
+                console.log(JSON.stringify(form))
+
+                fetch(urlRequest, {
+                    method: 'POST',
+                    body: JSON.stringify(form),
+                    headers: {
+                        'content-type': 'application/json',
+                        // authorization: 'Bearer' + localStorage.getItem('token-inova')
+                    }
+                })
+                    .then(resp => {
+                        if (resp.status === 200) {
+                            alert('Empresa cadastrado com sucesso!');
+                            login();
+                        }
+                        else {
+                            alert('Houve um erro no cadastro do usuário')
+                        }
+                    });
+            })
+
+
+        const login = () => {
+            const infoLogin = {
+                email: email,
+                senha: senha
+            };
+
+            fetch('http://localhost:5000/api/login', {
                 method: 'POST',
-                body: JSON.stringify(form),
+                body: JSON.stringify(infoLogin),
                 headers: {
-                    'content-type' : 'application/json',
-                    // authorization: 'Bearer' + localStorage.getItem('token-inova')
+                    'content-type': 'application/json'
                 }
             })
-            .then(() => alert("Empresa cadastrada com sucesso!"));
-            })
-            
-        
-            // const login = () => {
-            //     const infoLogin = {
-            //         email: email,
-            //         senha: senha
-            //     };
-        
-            //     fetch('http://localhost:5000/api/login', {
-            //         method: 'POST',
-            //         body: JSON.stringify(infoLogin),
-            //         headers: {
-            //             'content-type': 'application/json'
-            //         }
-            //     })
-            //         .then(resp => resp.json())
-            //         .then(data => {
-            //             if (data.value.token != undefined) {
-            //                 localStorage.setItem('token-inova', data.value.token)
-        
-            //                 if (parseJwt().Role === 'Administrador') {
-            //                     history.push('/admin');
-            //                 }
-            //                 if (parseJwt().Role === 'Empresa') {
-            //                     history.push('/empresa');
-            //                 }
-            //                 if (parseJwt().Role === 'Aluno') {
-            //                     history.push('/aluno');
-            //                 }
-            //             }
-            //             else {
-            //                 alert('Houve um erro no login');
-            //             }
-            //         })
-            //         .catch(e => console.error(e));
-            // };
-        
+                .then(resp => resp.json())
+                .then(data => {
+                    if (data.value.token != undefined) {
+                        localStorage.setItem('token-inova', data.value.token)
+
+                        if (parseJwt().Role === 'Administrador') {
+                            history.push('/admin');
+                        }
+                        if (parseJwt().Role === 'Empresa') {
+                            history.push('/empresa');
+                        }
+                        if (parseJwt().Role === 'Aluno') {
+                            history.push('/aluno');
+                        }
+                    }
+                    else {
+                        alert('Houve um erro no login');
+                    }
+                })
+                .catch(e => console.error(e));
+        };
+
     }
 
     return (
@@ -153,40 +146,40 @@ function EmpresaCadastro() {
                 </div>
 
                 <form className='formulario' onSubmit={event => {
-                        event.preventDefault()
-                        salvar()
+                    event.preventDefault()
+                    salvar()
                 }}>
 
                     <h3>Informações Gerais</h3>
-                    <Input name='razaoSocial' placeholder='Razão Social' type='text' required value={razaoSocial} onChange={e => setRazaoSocial(e.target.value)}/>
+                    <Input name='razao' placeholder='Razão Social' type='text' required value={razaoSocial} onChange={e => setRazaoSocial(e.target.value)} />
 
-                    <Input name='nomeFantasia'  placeholder='Nome Fantasia' type='text' required value={nomeFantasia} onChange={e => setNomeFantasia(e.target.value)}/>
+                    <Input name='nome' placeholder='Nome Fantasia' type='text' required value={nomeFantasia} onChange={e => setNomeFantasia(e.target.value)} />
 
-                    <Input name='atuacao' placeholder='Atuação' type='text' required value={ramoAtuacao} onChange={e => setRamoAtuacao(e.target.value)}/>
+                    <Input name='atuacao' placeholder='Atuação' type='text' required value={ramoAtuacao} onChange={e => setRamoAtuacao(e.target.value)} />
                     <div className="row1">
-                        <Input name='tamanhoEmpresa' placeholder='Tamanho da empresa' type='text' value={tamanhoEmpresa} required onChange={e => setTamanhoEmpresa(e.target.value)}/> 
+                        <Input name='tamanhoEmpresa' placeholder='Tamanho da empresa' type='text' value={tamanhoEmpresa} required onChange={e => setTamanhoEmpresa(e.target.value)} />
                         {/* <Input name='segmento' classCSS='input-placeholder' placeholder='Segmento' type='text' required /> */}
                     </div>
 
                     <div className="row2">
-                        <Input name='cnpj' placeholder='CNPJ' type='text' maxLength={13} required value={cnpj} onChange={e => setCnpj(e.target.value)}/>
-                        <Input name='CNAE' placeholder='CNAE' type='text' maxLength={13} required value={cnae} onChange={e => setCnae(e.target.value)}/>
+                        <Input name='cnpj' placeholder='CNPJ' type='text' maxLength={13} required value={cnpj} onChange={e => setCnpj(e.target.value)} />
+                        <Input name='CNAE' placeholder='CNAE' type='text' maxLength={13} required value={cnae} onChange={e => setCnae(e.target.value)} />
                     </div>
 
                     <h3>Informações Para Contato</h3>
-                    <Input name='emailContato' placeholder='Email Para Contato' type='email' required value={emailContato} onChange={e => setEmailContato(e.target.value)}/>
-                    <Input name='endereco'  placeholder='Endereço' type='text' value={endereco} onChange={e => setEndereco(e.target.value)}/>
+                    <Input name='emailContato' placeholder='Email Para Contato' type='email' required value={emailContato} onChange={e => setEmailContato(e.target.value)} />
+                    <Input name='endereco' placeholder='Endereço' type='text' value={endereco} onChange={e => setEndereco(e.target.value)} />
                     <div className="row3">
-                        <Input name='telefone'  placeholder='Telefone' type='text' value={telefone} onChange={e => setTelefone(e.target.value)}/>
-                        <Input name='celular'  placeholder='Celular' type='text' value={celular} onChange={e => setCelular(e.target.value)}/>
+                        <Input name='telefone' placeholder='Telefone' type='text' value={telefone} onChange={e => setTelefone(e.target.value)} />
+                        <Input name='celular' placeholder='Celular' type='text' value={celular} onChange={e => setCelular(e.target.value)} />
                     </div>
-                    <Input name='nomeResponsavel'  placeholder='Nome da Pessoa Responsável pelos Empregos' type='text' value={pessoaResponsavel} onChange={e => setPessoaResponsavel(e.target.value)}/>
+                    <Input name='nomeResponsavel' placeholder='Nome da Pessoa Responsável pelos Empregos' type='text' value={pessoaResponsavel} onChange={e => setPessoaResponsavel(e.target.value)} />
 
                     <h3>Informações Para a Conta</h3>
-                    <Input name='email'  placeholder='Email' type='email' value={email} onChange={e => setEmail(e.target.value)}/>
+                    <Input name='email' placeholder='Email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                     <div className="row4">
-                        <Input name='senha'  placeholder='Senha' type='password' value={senha} onChange={e => setSenha(e.target.value)}/>
-                        <Input name='senhaConfirma'  placeholder='Confirmar Senha' type='password' />
+                        <Input name='senha' placeholder='Senha' type='password' value={senha} onChange={e => setSenha(e.target.value)} />
+                        <Input name='senhaConfirma' placeholder='Confirmar Senha' type='password' />
                     </div>
 
                     <div className="botoes">

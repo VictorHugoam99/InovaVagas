@@ -38,69 +38,68 @@ namespace InovaWebApi.Repositories
             if (empresaBuscada != null)
             {
                 empresaBuscada.IdUsuarioNavigation = usuarioBuscado;
-                empresaAtualizada.IdUsuarioNavigation = new Usuario();
 
-                if (empresaAtualizada.RazaoSocial != null)
+                if (empresaAtualizada.RazaoSocial != null && empresaAtualizada.RazaoSocial != "")
                 {
                     empresaBuscada.RazaoSocial = empresaAtualizada.RazaoSocial;
                 }
 
-                if (empresaAtualizada.NomeFantasia != null)
+                if (empresaAtualizada.NomeFantasia != null && empresaAtualizada.NomeFantasia != "")
                 {
                     empresaBuscada.NomeFantasia = empresaAtualizada.NomeFantasia;
                 }
 
-                if (empresaAtualizada.RamoAtuacao != null)
+                if (empresaAtualizada.RamoAtuacao != null && empresaAtualizada.RamoAtuacao != "")
                 {
                     empresaBuscada.RamoAtuacao = empresaAtualizada.RamoAtuacao;
                 }
 
-                if (empresaAtualizada.TamanhoEmpresa != null)
+                if (empresaAtualizada.TamanhoEmpresa != null && empresaAtualizada.TamanhoEmpresa != "")
                 {
                     empresaBuscada.TamanhoEmpresa = empresaAtualizada.TamanhoEmpresa;
                 }
 
-                if (empresaAtualizada.Cnpj != null)
+                if (empresaAtualizada.Cnpj != null && empresaAtualizada.Cnpj != "")
                 {
                     empresaBuscada.Cnpj = empresaAtualizada.Cnpj;
                 }
 
-                if (empresaAtualizada.Cnae != null)
+                if (empresaAtualizada.Cnae != null && empresaAtualizada.Cnae != "")
                 {
                     empresaBuscada.Cnae = empresaAtualizada.Cnae;
                 }
 
-                if (empresaAtualizada.PessoaResponsavel != null)
+                if (empresaAtualizada.PessoaResponsavel != null && empresaAtualizada.PessoaResponsavel != "")
                 {
                     empresaBuscada.PessoaResponsavel = empresaAtualizada.PessoaResponsavel;
                 }
 
-                if (empresaAtualizada.IdUsuarioNavigation.Email != null)
+                if (empresaAtualizada.IdUsuarioNavigation.Email != null && empresaAtualizada.IdUsuarioNavigation.Email != "")
                 {
                     empresaBuscada.IdUsuarioNavigation.Email = empresaAtualizada.IdUsuarioNavigation.Email;
                 }
 
-                if (empresaAtualizada.IdUsuarioNavigation.Senha != null)
+                if (empresaAtualizada.IdUsuarioNavigation.Senha != null && empresaAtualizada.IdUsuarioNavigation.Senha != "")
                 {
                     empresaBuscada.IdUsuarioNavigation.Senha = empresaAtualizada.IdUsuarioNavigation.Senha;
                 }
 
-                if (empresaAtualizada.IdUsuarioNavigation.EmailContato != null)
+                if (empresaAtualizada.IdUsuarioNavigation.EmailContato != null && empresaAtualizada.IdUsuarioNavigation.EmailContato != "")
                 {
                     empresaBuscada.IdUsuarioNavigation.EmailContato = empresaAtualizada.IdUsuarioNavigation.EmailContato;
                 }
 
-                if (empresaAtualizada.IdUsuarioNavigation.Endereco != null)
+                if (empresaAtualizada.IdUsuarioNavigation.Endereco != null && empresaAtualizada.IdUsuarioNavigation.Endereco != "")
                 {
                     empresaBuscada.IdUsuarioNavigation.Endereco = empresaAtualizada.IdUsuarioNavigation.Endereco;
                 }
 
-                if (empresaAtualizada.IdUsuarioNavigation.Telefone != null)
+                if (empresaAtualizada.IdUsuarioNavigation.Telefone != null && empresaAtualizada.IdUsuarioNavigation.Telefone != "")
                 {
                     empresaBuscada.IdUsuarioNavigation.Telefone = empresaAtualizada.IdUsuarioNavigation.Telefone;
                 }
 
-                if (empresaAtualizada.IdUsuarioNavigation.Celular != null)
+                if (empresaAtualizada.IdUsuarioNavigation.Celular != null && empresaAtualizada.IdUsuarioNavigation.Celular != "")
                 {
                     empresaBuscada.IdUsuarioNavigation.Celular = empresaAtualizada.IdUsuarioNavigation.Celular;
                 }
@@ -239,7 +238,7 @@ namespace InovaWebApi.Repositories
                         DataCadastro = e.IdUsuarioNavigation.DataCadastro
                     }
                 })
-                .ToList().FindAll(e => e.CadastroAprovado == true);
+                .Where(e => e.CadastroAprovado == true).ToList();
         }
 
         public List<Empresa> ListarEmpresasSemAprovar()
