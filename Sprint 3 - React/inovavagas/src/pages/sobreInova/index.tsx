@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/header/index';
+import Footer from '../../components/footer/index';
 import { Card, Carousel } from 'react-bootstrap';
 
 import './style.css';
@@ -90,6 +91,7 @@ function SobreInova() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }

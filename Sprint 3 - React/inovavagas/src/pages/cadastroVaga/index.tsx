@@ -134,7 +134,7 @@ function CadastrarVagas() {
                 <img src={add} alt="nova vaga" />
                 <h1>Nova Vaga</h1>
             </div>
-            <div className='box'>
+            <div className='boxVaga'>
                 {/* <Header/> */}
                 <div className="form">
                     <form action="formulario" onSubmit={event => {

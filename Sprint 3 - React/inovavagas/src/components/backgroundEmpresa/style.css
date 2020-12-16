@@ -1,29 +1,27 @@
 
-.all .alinhamento .cab .box{
-    
+.allEmpresa .alinhamentoEmpresa .cabEmpresa .boxEmpresa{
     padding-left: 250px;
-    
     color: #fff;
     background: linear-gradient(90deg, rgba(223,47,47,1) 0%, rgba(235,76,76,1) 100%);
     border-radius: .6rem;
     display: flex;
     padding-top: 60px;
     padding-bottom: 15px;
-    /* height:120px; */
+    height:120px;
     align-items: baseline;
     /* max-width: 950px;
     max-height: 500px; */
 }
 
-.box h3{
+.boxEmpresa h3{
     padding-left: 30px;
     font-size: 1.4rem;
     font-weight: 40px; 
 }
-.box h1{
+.boxEmpresa h1{
     font-size: 2rem;
 }
-.all{
+.allEmpresa{
     width: 80%;
     padding-top: 150px;
     margin: auto;
@@ -34,11 +32,11 @@
     margin-top: 30px;
 }
 
-.imagem img{
+.imagemEmpresa .logoPerfil{
     border-radius: .6rem;
     width: 150px;
 }
-.descricao {
+.descricaoEmpresa {
     font-weight: 2px;
     font-size: .65rem;
     display: flex;
@@ -47,34 +45,33 @@
     padding: 0 150px;
     margin-right: -20px;
 }
-.descricao h3{
+.descricaoEmpresa h3{
     margin: 0;
     font-size: 17px;
 }
-.descricao h1{
+.descricaoEmpresa h1{
     font-size: 25px;
 }
-.imagem{
+.imagemEmpresa{
     display: flex;
     justify-content: flex-start;
     position: absolute;
     left: 50px;
-    top: 50px;
-    /* width: ; */
+    top: 20px;
 }
-.tamanho{
+.tamanhoEmpresa{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-right: 20px;
     margin-left: 100px;
 }
-.sede{
+.sedeEmpresa{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.segmento{
+.segmentoEmpresa{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,56 +82,56 @@
     display: flex;
     align-items: center;
 } */
-.cab{
+.cabEmpresa{
     position:relative;
 }
 @media (max-width: 960px){
-    .descricao h3{
+    .descricaoEmpresa h3{
         margin: 0;
         font-size: 10px;
     }
-    .descricao h1{
+    .descricaoEmpresa h1{
         font-size: 15px;
     }
 }
 @media(max-width: 767px){
-    .all{
+    .allEmpresa{
         width: 100%;
     }
-    .descricao{
+    .descricaoEmpresa{
         display: none;
     }
-    .box{
+    .boxEmpresa{
         flex-direction: column;
         border-radius: .1rem;
     }
-    .box h3{
+    .boxEmpresa h3{
         margin: 0;
         padding-left: 0px;
     }
 }
 @media(max-width: 410px){
-    .descricao{
+    .descricaoEmpresa{
         display: none;
     }
-    .imagem{
+    .imagemEmpresa{
         display: flex;
         /* justify-content: flex-start; */
         position: absolute;
         left: 30px;
         top: 30px;
     }
-    .box{
+    .boxEmpresa{
         flex-direction: column;
         border-radius: .1rem;
         margin-left: -50px;
     }
-    .box h3{
+    .boxEmpresa h3{
         margin: 0;
         font-size: 1.0rem;
         padding-left: 0px;
     }
-    .box h1{
+    .boxEmpresa h1{
         font-size: 1.5rem;
     }
 } 

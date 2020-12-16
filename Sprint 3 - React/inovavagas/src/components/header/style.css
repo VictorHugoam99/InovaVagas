@@ -18,7 +18,8 @@
     width: 25px;
 }
 
-.principal .header .img1 .logos{
+.principal .header .img1 .logosheader{
+    border-radius: 0;
     width: 250px;
 }
 
@@ -27,6 +28,7 @@
 }
 
 .img-item{
+    border-radius: 0;
     width: 20px;
 }
 

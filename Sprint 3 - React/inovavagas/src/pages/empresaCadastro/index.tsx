@@ -89,7 +89,6 @@ function EmpresaCadastro() {
                     .then(resp => {
                         if (resp.status === 200) {
                             alert('Empresa cadastrado com sucesso!');
-                            login();
                         }
                         else {
                             alert('Houve um erro no cadastro do usuário')

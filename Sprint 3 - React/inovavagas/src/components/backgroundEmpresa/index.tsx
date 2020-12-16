@@ -38,30 +38,30 @@ function BackgroundEmpresa(){
     }
     return(
         
-        <div className="all">
-            <div className="alinhamento">
-                <div className="cab">
-                    <div className="box">
+        <div className="allEmpresa">
+            <div className="alinhamentoEmpresa">
+                <div className="cabEmpresa">
+                    <div className="boxEmpresa">
                         <h1>{nomeFantasia}</h1>
                         <div className="h3">
                             <h3>{razaoSocial}</h3>
                         </div>
                     </div>
-                    <div className="imagem">
-                        <img src={logo}/>
+                    <div className="imagemEmpresa">
+                        <img className="logoPerfil" src={logo}/>
                     </div>
                 </div>
             </div>
-            <div className="descricao">
-                <div className="tamanho">
+            <div className="descricaoEmpresa">
+                <div className="tamanhoEmpresa">
                     <h1>Empresa</h1>
                     <h3>{tamanhoEmpresa} funcionarios</h3>
                 </div>
-                <div className="sede">
+                <div className="sedeEmpresa">
                     <h1>Sede</h1>
                     <h3>São Paulo - SP</h3>
                 </div>
-                <div className="segmento">
+                <div className="segmentoEmpresa">
                     <h1>Segmento</h1>
                     <h3>{ramoAtuacao}</h3>
                 </div>

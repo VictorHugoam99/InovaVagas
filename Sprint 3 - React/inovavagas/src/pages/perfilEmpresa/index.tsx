@@ -22,8 +22,8 @@ function PerfilEmpresa() {
                     Somos uma empresa bem legal mesmo você tem que acreditar
                     Somos uma empresa bem legal mesmo você tem que acreditar
                     Somos uma empresa bem legal mesmo você tem que acreditar
-                        Somos uma empresa bem legal mesmo você tem que acreditar</p>
-                    <div className="txt-title">
+                    Somos uma empresa bem legal mesmo você tem que acreditar</p>
+                    <div className="txt-title2">
                         <h2>Fotos</h2>
                         <div className="color-line"></div>
                     </div>

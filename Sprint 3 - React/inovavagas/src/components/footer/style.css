@@ -9,6 +9,7 @@
 }
 
 .footer .box-content .logos-container img{
+    border-radius: 0;
     width: 30px;
     margin: 0 5px;
 }

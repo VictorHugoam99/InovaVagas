@@ -131,7 +131,7 @@ function Configuracao() {
             .then(response => {
                 if (response.status === 204) {
                     alert('Alterações Realizadas com Sucesso')
-                    history.push('/aluno');
+                    history.push('/empresa');
                 }
             })
             .catch(e => { console.error(e) });
@@ -287,7 +287,7 @@ function Configuracao() {
 
                         <div className="botoes">
                             <ButtonFull name='Salvar' />
-                            <Link to='/aluno'><ButtonFull name='Cancelar' /></Link>
+                            <Link to='/empresa'><ButtonFull name='Cancelar' /></Link>
                         </div>
                     </form>
                 </div>

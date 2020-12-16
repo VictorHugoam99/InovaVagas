@@ -44,10 +44,10 @@ body{
     font-weight: bold;
 }
 .box2 .sobreusuario .editar{
-    align-items: center;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-top: 30px;
+    padding-right: 30px;
 }
 /* / .box2 .sobreusuario a {float:right} / */
 

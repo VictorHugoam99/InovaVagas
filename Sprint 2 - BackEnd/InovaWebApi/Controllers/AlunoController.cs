@@ -49,7 +49,7 @@ namespace InovaWebApi.Controllers
         /// <param name="id"></param>
         /// <returns>Aluno Object</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [Authorize]
+        //[Authorize]
         // GET api/<Aluno>/5
         [HttpGet("{id}")]
         public IActionResult GetById(int id)

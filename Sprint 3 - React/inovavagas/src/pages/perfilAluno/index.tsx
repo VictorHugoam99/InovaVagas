@@ -70,7 +70,6 @@ function PerfilAluno(){
                 <div className="sobreusuario">
 
                     <div className="editar">
-                        <h2>{Nome}</h2>
                         <a href="../perfilAlunoEditar">Editar Curriculo</a>
                     </div>
                     <h3>{EmailContato}</h3>

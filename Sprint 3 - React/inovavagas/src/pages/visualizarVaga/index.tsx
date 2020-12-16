@@ -161,7 +161,7 @@ function VisualizarVaga() {
                             <Link to='/aluno'><Button name="Voltar p/ vagas"></Button></Link>
                         </div>
                         <div className="atalho">
-                            <a href="#"> Visualizar perfil da empresa </a>
+                            <a href="/perfilEmpresa"> Visualizar perfil da empresa </a>
                         </div>
                     </div>
                     <div className="desc">

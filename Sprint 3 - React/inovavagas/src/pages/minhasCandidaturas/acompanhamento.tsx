@@ -40,7 +40,7 @@ function Acompanhamento() {
     // }
 
     return (
-        <div>
+        <div className="acompanhamento">
             <div>
                 <Header pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
             </div>
@@ -62,7 +62,7 @@ function Acompanhamento() {
                 <h1 className="h1Acompanhamento">Acompanhe por aqui o processo de uma candidatura:</h1>
                 <hr/>
                 <Card bsPrefix="card-acompanhamento ">
-                    <Card.Body>
+                    <Card.Body bsPrefix="card-body">
                         <div className="progressBar-acompanhamento">
                         <ProgressBar>
                             <ProgressBar striped variant="danger" animated now={25} label={'Seleção'} key={1} />

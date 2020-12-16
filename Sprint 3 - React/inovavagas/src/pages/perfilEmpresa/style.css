@@ -2,6 +2,10 @@
     font-weight: bold;
 }
 
+.perfilEmpresa .body-perfil .text-container .txt-title2{
+    padding-bottom: 100px;
+}
+
 .perfilEmpresa .body-perfil .text-container .color-line{
     height: 5px;
     width: 280px;

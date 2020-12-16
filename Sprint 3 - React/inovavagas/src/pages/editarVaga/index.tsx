@@ -148,7 +148,7 @@ function EditarVaga() {
                 {/* <h1>{NomeVaga}</h1> */}
                 <h3>Editar Vaga</h3>
             </div>
-            <div className='box'>
+            <div className='boxEditar'>
                 {/* <Header/> */}
                 <div className="form">
                     <form action="formulario" onSubmit={event => {
@@ -165,7 +165,7 @@ function EditarVaga() {
                             }
                         </select>
 
-                        <select name='idareavaga' value={IdAreaVaga} placeholder='IdAreaVaga' onChange={e => setIdAreaVaga(e.target.value)} >
+                        <select className="inputs" name='idareavaga' value={IdAreaVaga} placeholder='IdAreaVaga' onChange={e => setIdAreaVaga(e.target.value)} >
                             <option value='0' disabled >Area</option>
                             {
                                 AreaVagamap.map((item: any) => {

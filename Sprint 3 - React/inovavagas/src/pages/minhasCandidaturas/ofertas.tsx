@@ -40,7 +40,7 @@ function Ofertas() {
     // }
 
     return (
-        <div>
+        <div className="ofertas">
             <div>
                 <Header pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
             </div>

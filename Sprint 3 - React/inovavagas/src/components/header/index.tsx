@@ -265,7 +265,7 @@ const Header:React.FC<HeaderProps> = (props) => {
                             <img className="sininho" src={sinoNotificacao} alt="notificações" width="25px"/>
                     </Navbar.Brand> */}
                     <Navbar.Brand bsPrefix="img1">
-                            <img className="logos "src={logos} alt="logos senai e inova vagas" width="250"/>
+                            <img className="logosheader "src={logos} alt="logos senai e inova vagas" width="250"/>
                     </Navbar.Brand>
             </Navbar>
         </div>

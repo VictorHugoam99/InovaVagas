@@ -25,6 +25,7 @@ import MinhasCandidaturas from './pages/minhasCandidaturas/index';
 import Acompanhamento from './pages/minhasCandidaturas/acompanhamento';
 import Ofertas from './pages/minhasCandidaturas/ofertas';
 import SobreInova from './pages/sobreInova/index';
+import PerfilAluno from './pages/perfilAluno';
 
 
 
@@ -102,6 +103,7 @@ function Routers() {
                 <RotaPrivadaAdministrador path="/config" component={Configuracao}/> 
                 <RotaPrivadaAdministrador path="/sobreInova" component={SobreInova}/> 
                 <RotaPrivadaAluno path="/config" component={Configuracao}/> 
+                <RotaPrivadaAluno path="/perfilAluno" component={PerfilAluno}/> 
             </Switch>
         </BrowserRouter>
     )
